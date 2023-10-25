@@ -4,26 +4,33 @@
     './utils/_placeholders',
     './utils/_functions';
 
-@import 
-    './vendors/';
+// @import 
+//     './vendors/';
     
 @import 
     './base/_reset',
     './base/_typography';
 
 @import
-    './layouts/';
+    './layouts/header',
+    './layouts/footer';
 
-@import
-    './components/';
+// @import
+//     './components/';
     
 @import
     './pages/index', 
     './pages/restaurants';
     
-@import
-    './themes/';
+// @import
+//     './themes/';
 
-    body {
-        background: #000;
-    }
+
+
+
+
+// Je sais pas trop ou le mettre celui la !!!! 
+// base/_base.scss à créer pour cela ? 
+body {
+    background-color: $background-color;
+}

@@ -3,13 +3,14 @@
 
 // COULEURS 
 // principales
-$main-color: red;
-$second-color: blue;
+$main-color: black;
+$main-color-contrast: white;
+$second-color: #353535;
 $background-color: #F6F6F6;
-$background-dark-color: darken($background-color, 15%);
+$form-color: darken($background-color, 15%);
 
 // utilitaires
-
+$shadow-color : rgba($color: black, $alpha: 0.15);
 
 
 // ***** DIMENSIONS ****************************
