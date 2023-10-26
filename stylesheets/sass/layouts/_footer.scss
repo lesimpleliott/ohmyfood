@@ -1,18 +1,42 @@
-.space {
-    height: 60vh;
-}
-
 footer {
+    @include myFlex(column, flex-start, flex-start);
     background-color: $second-color;
-    padding: 22px 25px; 
+    padding: 22px $padding-section-RightLeft; 
+    line-height: 1.6;
     a {
         @extend %footer-text;
     }
+    
+    @media screen and (min-width:$desktop) {
+        @include myFlex(row, flex-end, center);
+        padding-right: 45px;
+        gap: 45px;
+    }    
 }
 
-.footer__logo {
+.footer__logo .logo {
+    width: 100px;
+    @include myFlex;
     margin-bottom: 15px;
-    img {
-        width: 100px;
+    
+    @media screen and (min-width:$desktop) {
+        margin: auto;
     }
 }
+
+.footer__partnership, 
+.footer__legal {
+    @include myFlex(column, center, flex-start);
+    
+    @media screen and (min-width:$desktop) {
+        @include myFlex(row, center, center);
+        gap: 15px;
+    }
+}
+
+@media screen and (min-width:$desktop) {
+    .footer__logo {order:3;}
+    .footer__partnership {order:1;}
+    .footer__legal {order: 2;}
+}
+

@@ -7,39 +7,64 @@
         <link rel="icon" type="image/svg+xml" href="assets/logos/icon.svg">
         <title>ohmyfood</title>
         <link rel="stylesheet" href="stylesheets/css/main.css">
-
         <script src="https://kit.fontawesome.com/bcd8223d60.js" crossorigin="anonymous"></script>
     </head>
 
     <body> 
         <header>
-            <a href="#" class="header__logo">
-                <img src="assets/logos/ohmyfood.svg" alt="Retour à l'index">
+            <a href="../index.html" style="display: none;">
+                <i class="fa-solid fa-arrow-left fa-lg"></i>
             </a>
-            <div class="header__localisation">
-                <i class="fa-solid fa-location-dot localisation__icon"></i>
-                <input type="text" class="localisation__input" value="Paris, Belleville" placeholder="Votre ville">
-            </div>
+            <img src="assets/logos/ohmyfood.svg" alt="Retour à l'index" class="logo">
         </header>
 
         <main>
-            <div class="space"></div>
+            <!-- LOCALISATION -->
+            <section class="localisation">
+                <div class="test">
+                    <i class="fa-solid fa-location-dot localisation__icon"></i>
+                    <input type="text" class="localisation__input" value="Paris, Belleville" placeholder="Localisation">
+                </div>
+                </section>
+
+            <!-- INTRO -->
+            <section class="intro">
+                <h2>Réservez le menu qui vous convient</h2>
+                <p class="subtitle">Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
+                <a href="#" class="button">Explorez nos restaurants</a>
+            </section>
+
+            <!-- FONCTIONNEMENT -->
+            <section class="functionning">
+                <h2>Fonctionnement</h2>
+            </section>
+            
+            <!-- RESTAURANTS -->
+            <section class="restaurants">
+
+            </section>
+            
+            <div class="space"></div> <!-- TO DELETE -->
+
         </main>
 
         <footer>
             <section class="footer__logo">
-                <img src="assets/logos/ohmyfood--white.svg" alt="Retour à l'index">
+                <img src="assets/logos/ohmyfood--white.svg" alt="Retour à l'index" class="logo">
             </section>
 
-            <section class="footer__links">
+            <section class="footer__partnership">
                 <div class="restaurant">
-                    <img src="assets/icons/proposeRestaurant-icon.svg" alt="">
+                    <img src="assets/icons/proposeRestaurant-icon.svg" alt="" class="icon">
                     <a href="#">Proposer un restaurant</a>
                 </div>
                 <div class="partner">
-                    <img src="assets/icons/partner-icon.svg" alt="">
+                    <img src="assets/icons/partner-icon.svg" alt="" class="icon">
                     <a href="#">Devenir partenaire</a>
                 </div>
+            </section>
+
+            <section class="footer__legal">
                 <a href="#">Mentions légales</a>
                 <a href="#">Contact</a>
             </section>

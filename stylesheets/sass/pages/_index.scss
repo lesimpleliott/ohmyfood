@@ -1,0 +1,37 @@
+.localisation {
+    @include myFlex;
+    width: 100vw;
+    height: 50px;
+    background-color: $form-color;
+
+    .fa-solid {
+        color: $second-color; 
+    }
+    
+    input {
+        @extend %input-text;
+        width: 130px;
+        border: none; 
+        background-color: inherit;
+        margin: 0 5px;
+    }
+} 
+
+
+.intro {
+    padding: $padding-section-TopBottom 30px;
+    text-align: center;
+    
+    .subtitle {
+        margin-top: 15px;
+    }
+
+
+
+}
+
+
+.functionning {
+    padding: $padding-section-TopBottom $padding-section-RightLeft;
+    background-color: white; 
+}

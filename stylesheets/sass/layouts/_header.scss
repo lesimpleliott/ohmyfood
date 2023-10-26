@@ -1,38 +1,20 @@
-header {
-    @include myFlex(column);
-}
-
-.header__logo, 
-.header__localisation {
-    width: 100vw;
+header {    
     @include myFlex;
-}
-
-.header__logo {
-    z-index: 1;
-    height: 63px;
+    height: 65px;
+    width: 100vw;
     background-color: white;
-    box-shadow: 0px 2px 4px 0px $shadow-color;
+    box-shadow: 0px 2px 4px 0px rgba($color: black, $alpha: 0.15);
+    position: relative;
+    z-index: 2;
 
-    img {
+    .fa-arrow-left {
+        position: absolute;
+        left: 20px;
+        color: $second-color;
+    }
+
+    .logo {
         height: 29px;
-    }
-}
-
-.header__localisation {
-    height: 50px;
-    background-color: $form-color;
-
-    .fa-solid {
-        color: $second-color; 
-    }
-
-    input {
-        @extend %input-text;
-        width: 130px;
-        border: none; 
-        background-color: inherit;
-        padding: 2px 10px;
-        margin: 0 5px;
+        width: auto;
     }
 }

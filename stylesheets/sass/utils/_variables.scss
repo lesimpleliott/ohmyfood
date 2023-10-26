@@ -1,18 +1,26 @@
-// DESIGN SYSTEM ----------------------
-// ------------------------------------
-
-// COULEURS 
-// principales
+// Couleurs principales
 $main-color: black;
 $main-color-contrast: white;
 $second-color: #353535;
-$background-color: #F6F6F6;
-$form-color: darken($background-color, 15%);
+$background-color: #F7F7F7; //#F6F6F6
 
-// utilitaires
-$shadow-color : rgba($color: black, $alpha: 0.15);
+// Couleurs utilitaires
+$form-color: darken($background-color, 10%);
+
+$gradient-color1: #9356DC; 
+$gradient-color1-light: lighten($gradient-color1, 2%);
+$gradient-color2: #FF79DA; 
+$gradient-color2-light: lighten($gradient-color2, 2%);
+
+$new-backColor: #99E2D0;
+$new-textColor: #008766;
 
 
-// ***** DIMENSIONS ****************************
-// $radius-btn: 5px; 
-// $padding-txt: 10px; 
+// MEDIA QUERIES
+$tablet: 768px; 
+$desktop: 1024px;
+
+
+// SPACES
+$padding-section-TopBottom : 45px; 
+$padding-section-RightLeft : 20px;

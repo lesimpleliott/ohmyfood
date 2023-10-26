@@ -9,28 +9,21 @@
     
 @import 
     './base/_reset',
+    './base/_base',   
     './base/_typography';
 
 @import
-    './layouts/header',
-    './layouts/footer';
+    './layouts/_header',
+    './layouts/_footer';
 
-// @import
-//     './components/';
+@import
+    './components/_button';
     
 @import
     './pages/index', 
-    './pages/restaurants';
+    './pages/menu';
     
 // @import
 //     './themes/';
 
 
-
-
-
-// Je sais pas trop ou le mettre celui la !!!! 
-// base/_base.scss à créer pour cela ? 
-body {
-    background-color: $background-color;
-}

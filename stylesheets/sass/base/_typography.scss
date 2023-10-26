@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap');
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
-// ---- TYPOGRAPHY SYSTEME ------
+
+// ---- TYPOGRAPHY ------
 
 $title-font: 'Shrikhand', serif;
 $main-font: 'Roboto', sans-serif; 
@@ -20,15 +24,21 @@ $main-font: 'Roboto', sans-serif;
     color: $main-color-contrast;
 }
 
-
-
-
-body {
-    font-family: 'Roboto', sans-serif;
- 
-}
-
 a {
     text-decoration: none;
 }
 
+h2 {
+    color: $main-color;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1,5;
+}
+
+.subtitle {
+    font-family: $main-font;
+    font-weight: 300;
+    font-size: 18px;
+    color: $second-color;
+    line-height: 1,5;
+}
