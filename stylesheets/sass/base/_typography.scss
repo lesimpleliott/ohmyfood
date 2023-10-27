@@ -10,29 +10,24 @@ body {
 $title-font: 'Shrikhand', serif;
 $main-font: 'Roboto', sans-serif; 
 
-%input-text {
+%main-text, 
+p {
     font-family: $main-font;
     font-weight: 500;
     font-size: 16px;
     color: $second-color;
-}
+} 
 
-%footer-text {
-    font-family: $main-font;
-    font-weight: 500;
-    font-size: 16px;
+%main-text-contrast {
+    @extend %main-text;
     color: $main-color-contrast;
-}
-
-a {
-    text-decoration: none;
 }
 
 h2 {
     color: $main-color;
     font-size: 24px;
     font-weight: 700;
-    line-height: 1,5;
+    line-height: 1.5;
 }
 
 .subtitle {
@@ -40,5 +35,18 @@ h2 {
     font-weight: 300;
     font-size: 18px;
     color: $second-color;
-    line-height: 1,5;
+    line-height: 1.5;
+}
+
+.card__title {
+    font-size: 18px;
+}
+
+.card__subtitle {
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.card__icon {
+    font-size: 25px;
 }

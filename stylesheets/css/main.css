@@ -9,33 +9,32 @@ body {
   background-color: #F7F7F7;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
 
-.localisation input {
+.localisation input, .functionning .step__number, footer a,
+p {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #353535;
 }
 
-footer a {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
+.functionning .step__number, footer a {
   color: white;
-}
-
-a {
-  text-decoration: none;
 }
 
 h2 {
   color: black;
   font-size: 24px;
   font-weight: 700;
-  line-height: 1, 5;
+  line-height: 1.5;
 }
 
 .subtitle {
@@ -43,7 +42,20 @@ h2 {
   font-weight: 300;
   font-size: 18px;
   color: #353535;
-  line-height: 1, 5;
+  line-height: 1.5;
+}
+
+.card__title {
+  font-size: 18px;
+}
+
+.card__subtitle {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.card__icon {
+  font-size: 25px;
 }
 
 header {
@@ -55,7 +67,6 @@ header {
   width: 100vw;
   background-color: white;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  position: relative;
   z-index: 2;
 }
 header .fa-arrow-left {
@@ -75,7 +86,8 @@ footer {
   align-items: flex-start;
   background-color: #353535;
   padding: 22px 20px;
-  line-height: 1.6;
+  margin-top: 30px;
+  line-height: 1.7;
 }
 @media screen and (min-width: 1024px) {
   footer {
@@ -150,6 +162,50 @@ footer {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 
+.card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+.card__hero {
+  position: relative;
+}
+.card__hero__image {
+  width: 100%;
+  height: 174px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card__hero__new {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #99E2D0;
+  padding: 10px 12px;
+  border-radius: 2px;
+  font-family: "Roboto", sans-serif;
+  color: #008766;
+  font-weight: 500;
+  font-size: 14px;
+}
+.card__content {
+  padding: 15px 25px 20px 15px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  rotate: 1deg;
+  transition: 0.3s;
+}
+
 .localisation {
   display: flex;
   flex-direction: row;
@@ -180,4 +236,57 @@ footer {
 .functionning {
   padding: 45px 20px;
   background-color: white;
+}
+.functionning__steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 25px;
+  margin-top: 25px;
+}
+.functionning .step {
+  background-color: #F7F7F7;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: calc(100% - 6px);
+  height: 72px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  position: relative;
+  padding: 0 35px;
+}
+.functionning .step__number {
+  width: 24px;
+  height: 24px;
+  background-color: #9356DC;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -12px;
+}
+.functionning .step__icon {
+  color: #353535;
+  margin-right: 20px;
+}
+.functionning .step .fa-store {
+  color: #9356DC;
+}
+
+.restaurants {
+  padding: 45px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.restaurants__cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 25px;
 }

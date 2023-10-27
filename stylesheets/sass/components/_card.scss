@@ -1,0 +1,46 @@
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(black, 0.15);
+    width: 100%;
+
+    &__hero {
+        position: relative;
+
+        &__image {
+            width: 100%;
+            height: 174px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            object-fit: cover;
+        }
+
+        &__new {
+            position: absolute;
+            top : 15px;
+            right: 15px;
+
+            background-color: $new-backColor;
+            padding: 10px 12px;
+            border-radius: 2px;
+            
+            font-family: $main-font;
+            color: $new-textColor;
+            font-weight: 500;
+            font-size: 14px;
+        }       
+    }
+
+    &__content {
+        padding: 15px 25px 20px 15px;
+        line-height: 1.5;
+        @include myFlex(row, space-between, center);
+    }
+}
+
+.card:hover {
+    box-shadow: 0px 4px 15px rgba(black, 0.25);
+    rotate: 1deg;
+    transition: 0.3s;
+}
+

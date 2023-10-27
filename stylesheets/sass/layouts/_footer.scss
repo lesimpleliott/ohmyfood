@@ -2,9 +2,10 @@ footer {
     @include myFlex(column, flex-start, flex-start);
     background-color: $second-color;
     padding: 22px $padding-section-RightLeft; 
-    line-height: 1.6;
+    margin-top: 30px;
+    line-height: 1.7;
     a {
-        @extend %footer-text;
+        @extend %main-text-contrast;
     }
     
     @media screen and (min-width:$desktop) {

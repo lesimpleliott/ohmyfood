@@ -9,7 +9,7 @@
     }
     
     input {
-        @extend %input-text;
+        @extend %main-text;
         width: 130px;
         border: none; 
         background-color: inherit;
@@ -25,13 +25,63 @@
     .subtitle {
         margin-top: 15px;
     }
-
-
-
 }
 
 
 .functionning {
     padding: $padding-section-TopBottom $padding-section-RightLeft;
     background-color: white; 
+
+    &__steps {
+        @include myFlex(column, center, flex-end);
+        gap: 25px;
+        margin-top: 25px;
+    }
+
+    .step {
+        background-color: $background-color;
+        border-radius: 20px;
+        @include myFlex(row, flex-start, center);
+        width: calc(100% - 6px);
+        height: 72px;
+        box-shadow: 0px 4px 15px rgba(black, 0.15);
+        position: relative;
+        padding: 0 35px;
+
+        &__number {
+            width: 24px;
+            height: 24px;
+            background-color: $gradient-color1;
+            @extend %main-text-contrast;
+            border-radius: 12px;
+            @include myFlex;
+            position: absolute;
+            left: -12px;
+        }
+
+        &__icon {
+            color: $second-color;
+            margin-right: 20px;
+        }
+
+        .fa-store {
+            color: $gradient-color1;
+        }
+    }
+}
+
+
+.restaurants {
+    padding: $padding-section-TopBottom $padding-section-RightLeft;
+    display: flex;
+    flex-direction: column;
+
+    &__cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 25px;
+    }
+
 }

@@ -4,7 +4,9 @@ header {
     width: 100vw;
     background-color: white;
     box-shadow: 0px 2px 4px 0px rgba($color: black, $alpha: 0.15);
-    position: relative;
+    // position: sticky;
+    // top: 0;
+    // left: 0;
     z-index: 2;
 
     .fa-arrow-left {
