@@ -1,8 +1,5 @@
 .card {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0px 4px 15px rgba(black, 0.15);
-    width: 100%;
+    @include backCards(100%); //mixin fond et forme card
 
     &__hero {
         position: relative;
@@ -20,12 +17,12 @@
             top : 15px;
             right: 15px;
 
-            background-color: $new-backColor;
+            background-color: $detail-color;
             padding: 10px 12px;
             border-radius: 2px;
             
             font-family: $main-font;
-            color: $new-textColor;
+            color: $detail-color-dark;
             font-weight: 500;
             font-size: 14px;
         }       
@@ -40,7 +37,5 @@
 
 .card:hover {
     box-shadow: 0px 4px 15px rgba(black, 0.25);
-    rotate: 1deg;
-    transition: 0.3s;
 }
 

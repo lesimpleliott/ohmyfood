@@ -1,26 +1,29 @@
-// Couleurs principales
-$main-color: black;
-$main-color-contrast: white;
-$second-color: #353535;
-$background-color: #F7F7F7; //#F6F6F6
+// TEXTES
+$text-mainColor: black;
+$text-mainColor-contrast: white;
+$text-secondColor: #353535;
 
-// Couleurs utilitaires
+//BACKGROUND & SECTIONS
+$background-color: #F7F7F7; //#F6F6F6
 $form-color: darken($background-color, 10%);
 
-$gradient-color1: #9356DC; 
-$gradient-color1-light: lighten($gradient-color1, 2%);
-$gradient-color2: #FF79DA; 
-$gradient-color2-light: lighten($gradient-color2, 2%);
+// INTERACTIVE
+$btn-color1: #9356DC; 
+$btn-color1-light: lighten($btn-color1, 2%);
+$btn-color2: #FF79DA; 
+$btn-color2-light: lighten($btn-color2, 2%);
 
-$new-backColor: #99E2D0;
-$new-textColor: #008766;
+$detail-color: #99E2D0;
+$detail-color-dark: #008766;
 
+// SPACES
+$safeZone-section: 45px; 
+$safeZone-sidePage: 5vw; // Side Page //padding R&L
 
 // MEDIA QUERIES
 $tablet: 768px; 
 $desktop: 1024px;
 
-
-// SPACES
-$padding-section-TopBottom : 45px; 
-$padding-section-RightLeft : 20px;
+// @media screen and (min-width: $tablet) {
+//     $pageSideSafeZone: xxxx; 
+//   }

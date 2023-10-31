@@ -5,7 +5,7 @@
     background-color: $form-color;
 
     .fa-solid {
-        color: $second-color; 
+        color: $text-secondColor; 
     }
     
     input {
@@ -19,7 +19,7 @@
 
 
 .intro {
-    padding: $padding-section-TopBottom 30px;
+    padding: $safeZone-section 30px;
     text-align: center;
     
     .subtitle {
@@ -29,7 +29,7 @@
 
 
 .functionning {
-    padding: $padding-section-TopBottom $padding-section-RightLeft;
+    padding: $safeZone-section $safeZone-sidePage;
     background-color: white; 
 
     &__steps {
@@ -51,7 +51,7 @@
         &__number {
             width: 24px;
             height: 24px;
-            background-color: $gradient-color1;
+            background-color: $btn-color1;
             @extend %main-text-contrast;
             border-radius: 12px;
             @include myFlex;
@@ -60,19 +60,19 @@
         }
 
         &__icon {
-            color: $second-color;
+            color: $text-secondColor;
             margin-right: 20px;
         }
 
         .fa-store {
-            color: $gradient-color1;
+            color: $btn-color1;
         }
     }
 }
 
 
 .restaurants {
-    padding: $padding-section-TopBottom $padding-section-RightLeft;
+    padding: $safeZone-section $safeZone-sidePage;
     display: flex;
     flex-direction: column;
 

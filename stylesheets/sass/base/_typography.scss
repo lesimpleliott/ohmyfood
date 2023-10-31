@@ -15,31 +15,46 @@ p {
     font-family: $main-font;
     font-weight: 500;
     font-size: 16px;
-    color: $second-color;
+    color: $text-secondColor;
 } 
 
 %main-text-contrast {
     @extend %main-text;
-    color: $main-color-contrast;
+    color: $text-mainColor-contrast;
+}
+
+h1 {
+    color: $text-mainColor;
+    font-family: $title-font;
+    font-size: 28px;
 }
 
 h2 {
-    color: $main-color;
+    color: $text-mainColor;
     font-size: 24px;
     font-weight: 700;
     line-height: 1.5;
+}
+
+h3 {
+    color: $text-mainColor;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-transform: uppercase;
 }
 
 .subtitle {
     font-family: $main-font;
     font-weight: 300;
     font-size: 18px;
-    color: $second-color;
+    color: $text-secondColor;
     line-height: 1.5;
 }
 
 .card__title {
     font-size: 18px;
+    font-weight: 700;
 }
 
 .card__subtitle {
@@ -49,4 +64,21 @@ h2 {
 
 .card__icon {
     font-size: 25px;
+}
+
+
+.dish__title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.dish__subtitle {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.dish__price {
+    font-size: 15px;
+    font-weight: 700;
+    color: $text-secondColor;
 }

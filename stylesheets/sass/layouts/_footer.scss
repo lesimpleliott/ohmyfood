@@ -1,8 +1,7 @@
 footer {
     @include myFlex(column, flex-start, flex-start);
-    background-color: $second-color;
-    padding: 22px $padding-section-RightLeft; 
-    margin-top: 30px;
+    background-color: $text-secondColor;
+    padding: 22px $safeZone-sidePage; 
     line-height: 1.7;
     a {
         @extend %main-text-contrast;
@@ -10,7 +9,7 @@ footer {
     
     @media screen and (min-width:$desktop) {
         @include myFlex(row, flex-end, center);
-        padding-right: 45px;
+        padding-right: $safeZone-sidePage;
         gap: 45px;
     }    
 }

@@ -3,7 +3,7 @@
     min-width: 220px;
     height: auto;
     border-radius: 25px;
-    background: linear-gradient(9deg, $gradient-color1 0%, $gradient-color2 100%);
+    background: linear-gradient(9deg, $btn-color1 0%, $btn-color2 100%);
     box-shadow: 0px 4px 10px rgba(black, 0.25);
     
     margin-top: 30px;
@@ -15,7 +15,7 @@
     color: white;
     
     &:hover {
-        background: linear-gradient(9deg, $gradient-color1-light 0%, $gradient-color2-light 100%);
+        background: linear-gradient(9deg, $btn-color1-light 0%, $btn-color2-light 100%);
         box-shadow: 0px 4px 15px rgba(black, 0.35);
     }
 }
