@@ -51,7 +51,7 @@
         &__number {
             width: 24px;
             height: 24px;
-            background-color: $btn-color1;
+            background-color: $main-color;
             @extend %main-text-contrast;
             border-radius: 12px;
             @include myFlex;
@@ -60,12 +60,12 @@
         }
 
         &__icon {
-            color: $text-secondColor;
+            color: $main-color;
             margin-right: 20px;
         }
 
         .fa-store {
-            color: $btn-color1;
+            color: $main-color;
         }
     }
 }

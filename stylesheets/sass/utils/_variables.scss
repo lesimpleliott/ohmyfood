@@ -8,13 +8,18 @@ $background-color: #F7F7F7; //#F6F6F6
 $form-color: darken($background-color, 10%);
 
 // INTERACTIVE
-$btn-color1: #9356DC; 
-$btn-color1-light: lighten($btn-color1, 2%);
-$btn-color2: #FF79DA; 
-$btn-color2-light: lighten($btn-color2, 2%);
+$main-color: #9356DC; 
+$main-color-light: lighten($main-color, 2%);
+$second-color: #FF79DA; 
+$second-color-light: lighten($second-color, 2%);
 
 $detail-color: #99E2D0;
 $detail-color-dark: #008766;
+
+// ANIMATIONS
+$loader-timing: 2500ms; 
+
+
 
 // SPACES
 $safeZone-section: 45px; 

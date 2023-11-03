@@ -13,7 +13,7 @@
     top: -40px;
 
     .restaurantTitle {
-        @include myFlex (row, space-between, center);
+      @include myFlex (row, space-between, center);
     }
 }
 
