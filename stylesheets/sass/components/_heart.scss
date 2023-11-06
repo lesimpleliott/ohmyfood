@@ -1,0 +1,51 @@
+.favoriteIcon {
+    position: relative;
+
+    .hearth-full, 
+    .hearth-empty {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translateY(-50%); 
+        font-size: 1em;
+    }
+    .hearth-empty {
+        color: black; 
+    }
+    .hearth-full {
+        background: linear-gradient(to top, $main-color, $second-color);
+        background-clip: text;
+        color: transparent;
+    }
+    
+    input[type="checkbox"] {
+        display: none;
+    }
+    
+    .favorite-checkbox {
+        cursor: pointer;
+        opacity: 0;
+    }
+    
+    input[type="checkbox"]:checked + .favorite-checkbox {
+        animation-name: heartAnimation;
+        animation-duration: 150ms;
+        animation-fill-mode: forwards;
+        // animation-timing-function: ease-out;
+    }
+    
+    @keyframes heartAnimation {
+        0% {
+            opacity: 0;
+            font-size: 0.1em;
+        }
+        80% {
+            opacity: 1;
+            font-size: 1.2em;
+        }
+        100% {
+            opacity: 1;
+            font-size: 1em;
+        }
+    }
+}

@@ -9,11 +9,14 @@
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
     padding: 30px $safeZone-sidePage;
-    position: relative;
-    top: -40px;
+    transform: translateY(-40px);
 
     .restaurantTitle {
       @include myFlex (row, space-between, center);
+
+      .favoriteIcon {
+        font-size: 2em;
+      }
     }
 }
 
@@ -30,7 +33,7 @@
       left: 0;
       width: 40px;
       height: 3px; 
-      background-color: $detail-color;
+      background-color: $third-color;
     }
   } 
 }
