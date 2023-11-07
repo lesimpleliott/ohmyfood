@@ -15,11 +15,10 @@
 
 @import
     './components/_loader', 
-    './components/_progressBar', 
     './components/_button', 
-    './components/_dish', 
-    './components/_card',
-    './components/_heart';
+    './components/_cardRestaurants',
+    './components/_cardDish', 
+    './components/_favorite';
     
 @import
     './pages/index', 

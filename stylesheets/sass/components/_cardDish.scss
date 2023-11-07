@@ -1,0 +1,57 @@
+$dish-checkbox: 60px; 
+
+.dish-checkbox {
+    width: 100%;
+}
+
+.dishCard {
+    @include backCards(100%);
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer; 
+    overflow: hidden;
+
+    &__content {
+        padding: 15px;
+    }
+
+    &__priceCheck {
+        display: flex;
+        justify-content: flex-end;
+        transform: translateX($dish-checkbox);
+
+        &__price {
+            padding: 15px;
+            align-self: flex-end;
+        }
+        &__check {
+            width: $dish-checkbox;
+            height: 100%;
+            background-color: $third-color;
+            color: white;
+            @include myFlex();
+            font-size: 2em;
+        }
+
+        transition: all 400ms ease-in-out;
+    }
+
+    &:hover {
+        box-shadow: 0px 4px 15px rgba(black, 0.25);
+        .dishCard__priceCheck {
+            transform: translateX(50px);
+          }
+    }
+}
+
+input[type="checkbox"] {
+    display: none;
+  }
+  
+input[type="checkbox"]:checked + .dish-checkbox {
+    .dishCard__priceCheck {
+        transform: translateX(0px);
+    }
+}

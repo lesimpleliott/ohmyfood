@@ -60,6 +60,12 @@ h3 {
   line-height: 1.5;
 }
 
+.button {
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+}
+
 .card__title {
   font-size: 18px;
   font-weight: 700;
@@ -74,17 +80,17 @@ h3 {
   font-size: 25px;
 }
 
-.dish__title {
+.dishCard__content__title {
   font-size: 18px;
   font-weight: 500;
 }
 
-.dish__subtitle {
+.dishCard__content__subtitle {
   font-size: 15px;
   font-weight: 300;
 }
 
-.dish__price {
+.dishCard__priceCheck__price {
   font-size: 15px;
   font-weight: 700;
   color: #353535;
@@ -107,7 +113,7 @@ header .fa-arrow-left {
   color: #353535;
 }
 header .logo {
-  height: 29px;
+  height: 30px;
   width: auto;
 }
 
@@ -179,7 +185,7 @@ loader {
   width: 100vw;
   position: fixed;
   background-color: white;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -196,27 +202,19 @@ loader {
   position: relative;
 }
 .container .logo {
+  width: auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  font-family: "Shrikhand", serif;
-  font-size: 10vw;
-  color: rgba(255, 255, 255, 0.1);
-  text-align: center;
-  -webkit-text-stroke: 1px #9356DC;
-  position: relative;
 }
-@keyframes animate {
-  0%, 10%, 100% {
-    width: 0;
-  }
-  70%, 90% {
-    width: 100%;
-  }
+.container .logo__image {
+  width: 50vw;
+  opacity: 0;
+  animation-name: loaderLogo;
+  animation-duration: 2500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
 }
-
-.progress {
+.container .progress {
   width: 100%;
   max-width: 700px;
   height: 15px;
@@ -227,7 +225,7 @@ loader {
   overflow: hidden;
   padding: 2px;
 }
-.progress__bar {
+.container .progress__bar {
   width: 0;
   height: 100%;
   border-radius: 20px;
@@ -239,6 +237,26 @@ loader {
   animation-timing-function: cubic-bezier(0.7, 0, 0.59, 1);
 }
 
+@keyframes loaderLogo {
+  0% {
+    opacity: 0.1;
+  }
+  15%, 20% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  52% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes progressBar {
   0% {
     width: 0;
@@ -265,38 +283,32 @@ loader {
 }
 .button {
   display: inline-block;
-  min-width: 220px;
-  height: auto;
+  min-width: 180px;
   border-radius: 25px;
-  background: linear-gradient(9deg, #9356DC 0%, #FF79DA 100%);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   margin-top: 30px;
-  padding: 15px;
+  padding: 15px 25px;
   text-align: center;
-  font-weight: 500;
-  font-size: 16px;
-  color: white;
+  background: linear-gradient(9deg, #9356DC, #FF79DA);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
 }
-.button:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+.button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 25px;
+  opacity: 0;
+  background: linear-gradient(9deg, #a16be0, #ff93e1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  transition: all 300ms ease-out;
 }
-
-.dish {
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 15px;
-}
-.dish__content {
-  padding-right: 15px;
-}
-.dish:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+.button:hover::after {
+  opacity: 1;
 }
 
 .card {
@@ -327,6 +339,9 @@ loader {
   color: #2c9c81;
   font-weight: 500;
   font-size: 14px;
+}
+.card__hero .nonVisible {
+  display: none;
 }
 .card__content {
   padding: 15px;
@@ -361,6 +376,60 @@ loader {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
+.dish-checkbox {
+  width: 100%;
+}
+
+.dishCard {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+.dishCard__content {
+  padding: 15px;
+}
+.dishCard__priceCheck {
+  display: flex;
+  justify-content: flex-end;
+  transform: translateX(60px);
+  transition: all 400ms ease-in-out;
+}
+.dishCard__priceCheck__price {
+  padding: 15px;
+  align-self: flex-end;
+}
+.dishCard__priceCheck__check {
+  width: 60px;
+  height: 100%;
+  background-color: #99E2D0;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+.dishCard:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+.dishCard:hover .dishCard__priceCheck {
+  transform: translateX(50px);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked + .dish-checkbox .dishCard__priceCheck {
+  transform: translateX(0px);
+}
+
 .favoriteIcon {
   position: relative;
 }
@@ -373,7 +442,7 @@ loader {
   font-size: 1em;
 }
 .favoriteIcon .hearth-empty {
-  color: black;
+  color: #353535;
 }
 .favoriteIcon .hearth-full {
   background: linear-gradient(to top, #9356DC, #FF79DA);
@@ -459,6 +528,7 @@ loader {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   position: relative;
   padding: 0 35px;
+  transition: all 300ms ease-in-out;
 }
 .functionning .step__number {
   width: 24px;
@@ -478,6 +548,10 @@ loader {
 }
 .functionning .step .fa-store {
   color: #9356DC;
+}
+.functionning .step:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  background-color: #e4d5f6;
 }
 
 .restaurants {
@@ -547,4 +621,123 @@ loader {
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.cardAnim-1 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 100ms;
+}
+
+.cardAnim-2 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 200ms;
+}
+
+.cardAnim-3 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 300ms;
+}
+
+.cardAnim-4 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 400ms;
+}
+
+.cardAnim-5 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 500ms;
+}
+
+.cardAnim-6 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 600ms;
+}
+
+.cardAnim-7 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 700ms;
+}
+
+.cardAnim-8 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 800ms;
+}
+
+.cardAnim-9 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 900ms;
+}
+
+.cardAnim-10 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 1000ms;
+}
+
+.cardAnim-11 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 1100ms;
+}
+
+.cardAnim-12 {
+  animation-name: cardAnim;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  animation-delay: 1200ms;
+}
+
+@keyframes cardAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(-110%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

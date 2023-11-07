@@ -49,3 +49,32 @@
     margin-bottom: 20px;
 }
 
+
+///////////////////
+//// ANIMATION ///////
+
+$cardAnim-timing: 1500ms;
+$cardAnim-delay: 100ms;
+
+@for $i from 1 through 12 {
+  .cardAnim-#{$i} {
+    animation-name: cardAnim;
+    animation-duration: $cardAnim-timing;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: 0;
+    animation-delay: #{$cardAnim-delay * $i};
+  }
+}
+
+@keyframes cardAnim {
+0% {
+  opacity: 0;
+  transform: translateX(-110%);
+}
+100% {
+  opacity: 1;
+  transform: translateX(0);
+  }
+}
+

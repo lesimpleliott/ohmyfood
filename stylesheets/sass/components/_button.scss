@@ -1,21 +1,38 @@
 .button {
     display: inline-block;
-    min-width: 220px;
-    height: auto;
+    min-width: 180px;
     border-radius: 25px;
-    background: linear-gradient(9deg, $main-color 0%, $second-color 100%);
-    box-shadow: 0px 4px 10px rgba(black, 0.25);
-    
     margin-top: 30px;
-    padding: 15px;
-    
+    padding: 15px 25px;
     text-align: center;
-    font-weight: 500;
-    font-size: 16px;
-    color: white;
     
+    background: linear-gradient(9deg, $main-color, $second-color);
+    box-shadow: 2px 2px 5px rgba(#000000, 0.2); 
+    
+    position: relative;
+    z-index: 1;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 25px;
+        opacity: 0;
+        
+        background: linear-gradient(9deg, $main-color-light, $second-color-light);
+        box-shadow: 2px 2px 5px rgba(#000000, 0.4); 
+        transition: all 300ms ease-out;
+    }
+
     &:hover {
-        // background: linear-gradient(9deg, $btn-color1-light 0%, $btn-color2-light 100%);
-        box-shadow: 0px 4px 15px rgba(black, 0.35);
+        &::after {
+            opacity: 1;
+        }
+    
+    
     }
 }

@@ -17,7 +17,6 @@ p {
     font-size: 16px;
     color: $text-secondColor;
 } 
-
 %main-text-contrast {
     @extend %main-text;
     color: $text-mainColor-contrast;
@@ -28,14 +27,12 @@ h1 {
     font-family: $title-font;
     font-size: 28px;
 }
-
 h2 {
     color: $text-mainColor;
     font-size: 24px;
     font-weight: 700;
     line-height: 1.5;
 }
-
 h3 {
     color: $text-mainColor;
     font-size: 16px;
@@ -43,7 +40,6 @@ h3 {
     line-height: 1.5;
     text-transform: uppercase;
 }
-
 .subtitle {
     font-family: $main-font;
     font-weight: 300;
@@ -52,6 +48,15 @@ h3 {
     line-height: 1.5;
 }
 
+
+.button {
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+}
+
+
+// TYPO CARDS RESTAURANTS
 .card__title {
     font-size: 18px;
     font-weight: 700;
@@ -66,18 +71,18 @@ h3 {
     font-size: 25px;
 }
 
-
-.dish__title {
+// TYPO PLATS MENU 
+.dishCard__content__title {
     font-size: 18px;
     font-weight: 500;
 }
 
-.dish__subtitle {
+.dishCard__content__subtitle {
     font-size: 15px;
     font-weight: 300;
 }
 
-.dish__price {
+.dishCard__priceCheck__price {
     font-size: 15px;
     font-weight: 700;
     color: $text-secondColor;

@@ -10,7 +10,7 @@
         font-size: 1em;
     }
     .hearth-empty {
-        color: black; 
+        color: $text-secondColor; 
     }
     .hearth-full {
         background: linear-gradient(to top, $main-color, $second-color);
