@@ -36,32 +36,15 @@
     }
 
     &__content {
+        display: flex; 
         padding: 15px;
         padding-top: 12px;
         line-height: 1.5;
-        display: flex; 
-        flex-direction: row;
-        justify-content: space-between;
+        border: solid 1px blue; //////////////////// TO DELETE
         
-        .card__icon {    
-            position: relative;
-
-            .hearth-full, 
-            .hearth-empty {
-                position: absolute;
-                top: 50%;
-                right: 50%;
-                transform: translateY(-50%); 
-                font-size: 1em;
-            }
-            .hearth-empty {
-                color: black; 
-            }
-            .hearth-full {
-                background: linear-gradient(to top, $main-color, $second-color);
-                background-clip: text;
-                color: transparent;
-            }
+        .card__text {
+            flex: 1;
+            border: solid 1px red; //////////////////// TO DELETE
         }
     }
     transition: all 200ms ease-in-out;

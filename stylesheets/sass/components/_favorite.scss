@@ -1,21 +1,24 @@
+// SAVE 2 - FONCTIONNEL /////////////////////////////////////////////////
 .favoriteIcon {
+    border: solid 1px red; //////////////////// TO DELETE
     position: relative;
+    width: 2em;
 
-    .hearth-full, 
-    .hearth-empty {
+    .heart-full, 
+    .heart-empty {
         position: absolute;
         top: 50%;
-        right: 50%;
-        transform: translateY(-50%); 
-        font-size: 1em;
+        left: 50%;
     }
-    .hearth-empty {
+    .heart-empty {
         color: $text-secondColor; 
+        transform: translate(-50%, -50%);
     }
-    .hearth-full {
+    .heart-full {
         background: linear-gradient(to top, $main-color, $second-color);
         background-clip: text;
         color: transparent;
+        transform: translate(-50%, -50%) scale(0);
     }
     
     input[type="checkbox"] {
@@ -24,28 +27,71 @@
     
     .favorite-checkbox {
         cursor: pointer;
-        opacity: 0;
     }
     
-    input[type="checkbox"]:checked + .favorite-checkbox {
-        animation-name: heartAnimation;
-        animation-duration: 150ms;
-        animation-fill-mode: forwards;
-        // animation-timing-function: ease-out;
-    }
-    
-    @keyframes heartAnimation {
-        0% {
-            opacity: 0;
-            font-size: 0.1em;
-        }
-        80% {
-            opacity: 1;
-            font-size: 1.2em;
-        }
-        100% {
-            opacity: 1;
-            font-size: 1em;
-        }
+    input[type="checkbox"]:checked + .favorite-checkbox{
+         .heart-full {
+            transform: translate(-50%, -50%) scale(1.2);
+        }   
     }
 }
+
+
+
+
+
+
+
+// SAVE 1 - ORIGIN /////////////////////////////////////////////////
+// .favoriteIcon {
+//     position: relative;
+
+//     .heart-full, 
+//     .heart-empty {
+//         position: absolute;
+//         top: 50%;
+//         right: 50%;
+//         transform: translateY(-50%); 
+//         font-size: 1em;
+//     }
+//     .heart-empty {
+//         color: $text-secondColor; 
+//     }
+//     .heart-full {
+//         background: linear-gradient(to top, $main-color, $second-color);
+//         background-clip: text;
+//         color: transparent;
+//     }
+    
+//     input[type="checkbox"] {
+//         display: none;
+//     }
+    
+//     .favorite-checkbox {
+//         cursor: pointer;
+//         opacity: 0;
+//     }
+    
+//     input[type="checkbox"]:checked + .favorite-checkbox {
+//         animation-name: heartAnimation;
+//         animation-duration: 150ms;
+//         animation-fill-mode: forwards;
+//         animation-timing-function: ease-out;
+//     }
+    
+//     @keyframes heartAnimation {
+//         0% {
+//             // opacity: 0;
+//             font-size: 0.1em;
+//         }
+//         80%, 100% {
+//             opacity: 1;
+//         }
+//         80% {
+//             font-size: 1.2em;
+//         }
+//         100% {
+//             font-size: 1em;
+//         }
+//     }
+// }

@@ -361,32 +361,15 @@ loader {
   display: none;
 }
 .card__content {
+  display: flex;
   padding: 15px;
   padding-top: 12px;
   line-height: 1.5;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  border: solid 1px blue;
 }
-.card__content .card__icon {
-  position: relative;
-}
-.card__content .card__icon .hearth-full,
-.card__content .card__icon .hearth-empty {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translateY(-50%);
-  font-size: 1em;
-}
-.card__content .card__icon .hearth-empty {
-  color: black;
-}
-.card__content .card__icon .hearth-full {
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
+.card__content .card__text {
+  flex: 1;
+  border: solid 1px red;
 }
 
 .card:hover {
@@ -440,59 +423,43 @@ loader {
   transform: translateX(50px);
 }
 
-input[type=checkbox] {
+.dishes input[type=checkbox] {
   display: none;
 }
-
-input[type=checkbox]:checked + .dish-checkbox .dishCard__priceCheck {
+.dishes input[type=checkbox]:checked + .dish-checkbox .dishCard__priceCheck {
   transform: translateX(0px);
 }
 
 .favoriteIcon {
+  border: solid 1px red;
   position: relative;
+  width: 2em;
 }
-.favoriteIcon .hearth-full,
-.favoriteIcon .hearth-empty {
+.favoriteIcon .heart-full,
+.favoriteIcon .heart-empty {
   position: absolute;
   top: 50%;
-  right: 50%;
-  transform: translateY(-50%);
-  font-size: 1em;
+  left: 50%;
 }
-.favoriteIcon .hearth-empty {
+.favoriteIcon .heart-empty {
   color: #353535;
+  transform: translate(-50%, -50%);
 }
-.favoriteIcon .hearth-full {
+.favoriteIcon .heart-full {
   background: linear-gradient(to top, #9356DC, #FF79DA);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
+  transform: translate(-50%, -50%) scale(0);
 }
 .favoriteIcon input[type=checkbox] {
   display: none;
 }
 .favoriteIcon .favorite-checkbox {
   cursor: pointer;
-  opacity: 0;
 }
-.favoriteIcon input[type=checkbox]:checked + .favorite-checkbox {
-  animation-name: heartAnimation;
-  animation-duration: 150ms;
-  animation-fill-mode: forwards;
-}
-@keyframes heartAnimation {
-  0% {
-    opacity: 0;
-    font-size: 0.1em;
-  }
-  80% {
-    opacity: 1;
-    font-size: 1.2em;
-  }
-  100% {
-    opacity: 1;
-    font-size: 1em;
-  }
+.favoriteIcon input[type=checkbox]:checked + .favorite-checkbox .heart-full {
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
 .localisation {
