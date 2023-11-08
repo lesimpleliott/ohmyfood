@@ -1,26 +1,57 @@
+.mainMenu {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero__image {
     width: 100vw;
     height: 275px;
     object-fit: cover;
+    margin-bottom: -40px;
 }
 
-.mainMenu {
+.menusContainer {
     background-color: $background-color;
-    border-top-right-radius: 40px;
-    border-top-left-radius: 40px;
+    border-radius: 40px 40px 0 0;
     padding: 30px $safeZone-sidePage;
-    transform: translateY(-40px);
+    width: 100%;
+    max-width: $desktop;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .restaurantTitle {
+      max-width: $tablet;
       @include myFlex (row, space-between, center);
-
+        @media screen and (min-width: $tablet) {
+          justify-content: center;
+        }
+        
       .favoriteIcon {
         font-size: 2em;
+        margin-left: 50px;
       }
     }
 }
 
 .menu {
+  width: 100%;
+  max-width: $tablet;
+  @media screen and (min-width: $tablet) {
+    width: 80%;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 70%;
+  }
+
   h3{
     position: relative;
     margin-top: 40px;

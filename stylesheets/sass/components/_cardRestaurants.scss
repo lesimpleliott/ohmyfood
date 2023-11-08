@@ -1,5 +1,8 @@
 .card {
     @include backCards(100%); //mixin fond et forme card
+    @media screen and (min-width: $tablet) {
+        @include backCards(48%); 
+    }
 
     &__hero {
         position: relative;
@@ -61,14 +64,10 @@
             }
         }
     }
+    transition: all 200ms ease-in-out;
 }
 
 .card:hover {
     box-shadow: 0px 4px 15px rgba(black, 0.25);
-}
-
-
-
-
-
-
+    transform: scale(1.01);
+} 

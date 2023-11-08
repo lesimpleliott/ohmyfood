@@ -8,22 +8,23 @@ $dish-checkbox: 60px;
     @include backCards(100%);
 
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     width: 100%;
     cursor: pointer; 
     overflow: hidden;
 
     &__content {
         padding: 15px;
+        width: 100%;
     }
-
+    
     &__priceCheck {
         display: flex;
         justify-content: flex-end;
         transform: translateX($dish-checkbox);
 
         &__price {
-            padding: 15px;
+            padding: 10px;
             align-self: flex-end;
         }
         &__check {
@@ -34,14 +35,13 @@ $dish-checkbox: 60px;
             @include myFlex();
             font-size: 2em;
         }
-
         transition: all 400ms ease-in-out;
     }
 
     &:hover {
         box-shadow: 0px 4px 15px rgba(black, 0.25);
         .dishCard__priceCheck {
-            transform: translateX(50px);
+            transform: translateX($dish-checkbox - 10px);
           }
     }
 }
