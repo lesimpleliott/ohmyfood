@@ -3,12 +3,13 @@
     width: 100vw;
     height: 50px;
     background-color: $form-color;
-
+    
     .fa-solid {
         color: $text-secondColor; 
     }
     
     input {
+        outline: none;
         @extend %main-text;
         width: 130px;
         border: none; 

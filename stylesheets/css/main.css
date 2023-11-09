@@ -192,78 +192,52 @@ loader {
   height: 100vh;
   width: 100vw;
   position: fixed;
-  background-color: white;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  animation: exit-loader 10ms 3000ms forwards;
 }
-
-.container {
-  height: 95vh;
-  width: 75vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+@keyframes exit-loader {
+  to {
+    z-index: -2;
+  }
 }
-.container .logo {
-  width: auto;
-  display: flex;
-  justify-content: center;
-}
-.container .logo__image {
-  width: 50vw;
-  opacity: 0;
-  animation-name: loaderLogo;
-  animation-duration: 2500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-.container .progress {
+loader .loader__backLoader {
+  height: 100%;
   width: 100%;
-  max-width: 700px;
+  background-color: white;
+  opacity: 1;
+  animation: exit-animation 1000ms 2000ms forwards;
+  animation-timing-function: cubic-bezier(0, 0, 1, 0.2);
+}
+@keyframes exit-animation {
+  0%, 20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+loader .loader__progress {
+  width: 80%;
+  max-width: 500px;
   height: 15px;
-  border: solid 1px #9356DC;
   position: absolute;
-  bottom: 0;
-  border-radius: 20px;
+  bottom: 5vh;
+  border: solid 1px #9356DC;
+  border-radius: 15px;
   overflow: hidden;
   padding: 2px;
+  animation: exit-animation 1000ms 2000ms forwards ease-in;
 }
-.container .progress__bar {
+loader .loader__progress__bar {
   width: 0;
   height: 100%;
   border-radius: 20px;
   background-color: #FF79DA;
   transform-origin: left;
-  animation-name: progressBar;
-  animation-duration: 2500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.7, 0, 0.59, 1);
-}
-
-@keyframes loaderLogo {
-  0% {
-    opacity: 0.1;
-  }
-  15%, 20% {
-    opacity: 0.3;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  52% {
-    opacity: 0.8;
-  }
-  70% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation: progressBar 1500ms forwards cubic-bezier(0.7, 0, 0.59, 1);
 }
 @keyframes progressBar {
   0% {
@@ -289,6 +263,47 @@ loader {
     background-color: #9356DC;
   }
 }
+loader .loader__logo {
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  height: 12vw;
+  max-height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  animation: logo-load 1500ms forwards, logo-move 1000ms 2000ms ease-in-out forwards;
+}
+@keyframes logo-move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-42vh) scale(0.2);
+    opacity: 0;
+  }
+}
+@keyframes logo-load {
+  0% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  52% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .button {
   display: inline-block;
   min-width: 180px;
@@ -490,6 +505,7 @@ loader {
   color: #353535;
 }
 .localisation input {
+  outline: none;
   width: 130px;
   border: none;
   background-color: inherit;
