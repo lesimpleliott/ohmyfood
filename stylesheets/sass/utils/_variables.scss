@@ -19,6 +19,13 @@ $third-color-dark: darken(#99E2D0, 35%);
 $safeZone-section: 45px; 
 $safeZone-sidePage: 5vw; // Side Page //padding R&L
 
+//VARIABLES LOADER
+$loader-timing: 1500ms; 
+$loaderFull-displayTime: 500ms;
+$loaderHide-delay: $loader-timing + $loaderFull-displayTime; 
+$exit-timing: 1000ms; 
+$exitLoader-delay: $loader-timing + $loaderFull-displayTime + $exit-timing;
+
 // MEDIA QUERIES
 $tablet: 768px; 
 $desktop: 1024px;
