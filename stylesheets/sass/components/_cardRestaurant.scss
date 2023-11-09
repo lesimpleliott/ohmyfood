@@ -1,6 +1,6 @@
 .card {
     @include backCards(100%); //mixin fond et forme card
-    @media screen and (min-width: $tablet) {
+    @include responsive-tablet {
         @include backCards(48%); 
     }
 
@@ -49,11 +49,10 @@
     .favoriteIcon {
         font-size: 1.8em;
     }
-
     transition: all 200ms ease-in-out;
 }
 
 .card:hover {
-    box-shadow: 0px 4px 15px rgba(black, 0.25);
+    box-shadow: $shadow-card-dark;
     transform: scale(1.01);
 } 

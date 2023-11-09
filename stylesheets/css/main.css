@@ -129,14 +129,12 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
   background-color: #353535;
   padding: 22px 5vw;
   line-height: 1.7;
 }
 @media screen and (min-width: 1024px) {
   footer {
-    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
@@ -147,15 +145,13 @@ footer {
 
 .footer__logo .logo {
   width: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 15px;
 }
 @media screen and (min-width: 1024px) {
   .footer__logo .logo {
     margin: auto;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -164,15 +160,11 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
 }
 @media screen and (min-width: 1024px) {
   .footer__partnership,
   .footer__legal {
-    display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     gap: 15px;
   }
 }
@@ -196,7 +188,7 @@ loader {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: exit-loader 10ms 3000ms forwards;
+  animation: exit-loader 10ms 0ms forwards;
 }
 @keyframes exit-loader {
   to {
@@ -208,7 +200,7 @@ loader .loader__backLoader {
   width: 100%;
   background-color: white;
   opacity: 1;
-  animation: exit-animation 1000ms 2000ms forwards;
+  animation: exit-animation 0ms 0ms forwards;
   animation-timing-function: cubic-bezier(0, 0, 1, 0.2);
 }
 @keyframes exit-animation {
@@ -229,7 +221,7 @@ loader .loader__progress {
   border-radius: 15px;
   overflow: hidden;
   padding: 2px;
-  animation: exit-animation 1000ms 2000ms forwards ease-in;
+  animation: exit-animation 0ms 0ms forwards ease-in;
 }
 loader .loader__progress__bar {
   width: 0;
@@ -237,7 +229,7 @@ loader .loader__progress__bar {
   border-radius: 20px;
   background-color: #FF79DA;
   transform-origin: left;
-  animation: progressBar 1500ms forwards cubic-bezier(0.7, 0, 0.59, 1);
+  animation: progressBar 0ms forwards cubic-bezier(0.7, 0, 0.59, 1);
 }
 @keyframes progressBar {
   0% {
@@ -272,7 +264,7 @@ loader .loader__logo {
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0;
-  animation: logo-load 1500ms forwards, logo-move 1000ms 2000ms ease-in-out forwards;
+  animation: logo-load 0ms forwards, logo-move 0ms 0ms ease-in-out forwards;
 }
 @keyframes logo-move {
   0% {
@@ -394,26 +386,26 @@ loader .loader__logo {
 }
 
 .dish-checkbox {
-  width: 100%;
-}
-
-.dishCard {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   width: 100%;
+}
+
+.dishCard {
   display: flex;
-  width: 100%;
   cursor: pointer;
   overflow: hidden;
 }
 .dishCard__content {
+  border: solid 1px red;
   padding: 15px;
   width: 100%;
 }
 .dishCard__priceCheck {
+  border: solid 1px deepskyblue;
   display: flex;
-  justify-content: flex-end;
+  width: 100%;
   transform: translateX(60px);
   transition: all 400ms ease-in-out;
 }
@@ -422,14 +414,14 @@ loader .loader__logo {
   align-self: flex-end;
 }
 .dishCard__priceCheck__check {
-  width: 60px;
-  height: 100%;
-  background-color: #99E2D0;
-  color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 60px;
+  height: 100%;
+  background-color: #99E2D0;
+  color: white;
   font-size: 2em;
 }
 .dishCard:hover {
@@ -536,7 +528,6 @@ loader .loader__logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
   gap: 25px;
   margin-top: 25px;
 }
@@ -642,13 +633,9 @@ loader .loader__logo {
   position: relative;
   z-index: 2;
   overflow: hidden;
-}
-@media screen and (min-width: 768px) {
-  .menusContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .menusContainer .restaurant {
   max-width: 768px;
@@ -698,22 +685,16 @@ loader .loader__logo {
 .dishes {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 12px;
 }
 
 .orderButton {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .cardAnim-1 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -722,7 +703,7 @@ loader .loader__logo {
 }
 
 .cardAnim-2 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -731,7 +712,7 @@ loader .loader__logo {
 }
 
 .cardAnim-3 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -740,7 +721,7 @@ loader .loader__logo {
 }
 
 .cardAnim-4 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -749,7 +730,7 @@ loader .loader__logo {
 }
 
 .cardAnim-5 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -758,7 +739,7 @@ loader .loader__logo {
 }
 
 .cardAnim-6 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -767,7 +748,7 @@ loader .loader__logo {
 }
 
 .cardAnim-7 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -776,7 +757,7 @@ loader .loader__logo {
 }
 
 .cardAnim-8 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -785,7 +766,7 @@ loader .loader__logo {
 }
 
 .cardAnim-9 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -794,7 +775,7 @@ loader .loader__logo {
 }
 
 .cardAnim-10 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -803,7 +784,7 @@ loader .loader__logo {
 }
 
 .cardAnim-11 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -812,7 +793,7 @@ loader .loader__logo {
 }
 
 .cardAnim-12 {
-  animation-name: cardAnim;
+  animation-name: dishCard-Anim;
   animation-duration: 1500ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -820,7 +801,7 @@ loader .loader__logo {
   animation-delay: 1200ms;
 }
 
-@keyframes cardAnim {
+@keyframes dishCard-Anim {
   0% {
     opacity: 0;
     transform: translateX(-110%);

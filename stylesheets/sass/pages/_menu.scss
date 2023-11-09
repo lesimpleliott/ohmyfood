@@ -21,12 +21,9 @@
     position: relative;
     z-index: 2;
     overflow: hidden;
-
-    @media screen and (min-width: $tablet) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .restaurant {
       max-width: $tablet;
@@ -34,9 +31,9 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      @media screen and (min-width: $tablet) {
+      @include responsive-tablet {
         justify-content: center;
-      }    
+      }
 
       &__icon {
         font-size: 2em;
@@ -47,10 +44,10 @@
 .menu {
   width: 100%;
   max-width: $tablet;
-  @media screen and (min-width: $tablet) {
+  @include responsive-tablet {
     width: 80%;
   }
-  @media screen and (min-width: $desktop) {
+  @include responsive-desktop {
     width: 70%;
   }
 
@@ -72,35 +69,31 @@
 }
 
 .dishes {
-    @include myFlex(column, center, center);
+    display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 
-.orderButton {
-    @include myFlex; 
+.orderButton { 
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 
-///////////////////
+
 //// ANIMATION ///////
-
-$cardAnim-timing: 1500ms;
-$cardAnim-delay: 100ms;
-
 @for $i from 1 through 12 {
   .cardAnim-#{$i} {
-    animation-name: cardAnim;
-    animation-duration: $cardAnim-timing;
+    animation-name: dishCard-Anim;
+    animation-duration: $dishCard-timing;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     opacity: 0;
-    animation-delay: #{$cardAnim-delay * $i};
+    animation-delay: #{$dishCard-delay * $i};
   }
 }
 
-@keyframes cardAnim {
+@keyframes dishCard-Anim {
 0% {
   opacity: 0;
   transform: translateX(-110%);

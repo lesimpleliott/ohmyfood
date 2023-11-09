@@ -4,9 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-
 // ---- TYPOGRAPHY ------
-
 $title-font: 'Shrikhand', serif;
 $main-font: 'Roboto', sans-serif; 
 
@@ -48,7 +46,6 @@ h3 {
     line-height: 1.5;
 }
 
-
 .button {
     font-weight: 500;
     font-size: 16px;
@@ -61,12 +58,10 @@ h3 {
     font-size: 18px;
     font-weight: 700;
 }
-
 .card__subtitle {
     font-size: 17px;
     font-weight: 300;
 }
-
 .card__icon {
     font-size: 25px;
 }
@@ -76,12 +71,10 @@ h3 {
     font-size: 18px;
     font-weight: 500;
 }
-
 .dishCard__content__subtitle {
     font-size: 15px;
     font-weight: 300;
 }
-
 .dishCard__priceCheck__price {
     font-size: 15px;
     font-weight: 700;
