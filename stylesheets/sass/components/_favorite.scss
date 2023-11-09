@@ -1,6 +1,4 @@
-// SAVE 2 - FONCTIONNEL /////////////////////////////////////////////////
 .favoriteIcon {
-    border: solid 1px red; //////////////////// TO DELETE
     position: relative;
     width: 2em;
 
@@ -19,6 +17,7 @@
         background-clip: text;
         color: transparent;
         transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
     }
     
     input[type="checkbox"] {
@@ -30,11 +29,82 @@
     }
     
     input[type="checkbox"]:checked + .favorite-checkbox{
-         .heart-full {
-            transform: translate(-50%, -50%) scale(1.2);
+        .heart-full {
+            animation: favoriteAnimation 250ms ease-in-out forwards;
         }   
     }
+
+    @keyframes favoriteAnimation {
+        0% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+        60%, 80% {
+            transform: translate(-50%, -50%) scale(1.2);
+            opacity: 1;
+        }
+        70%, 100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+    }
 }
+
+
+
+// SAVE 2 - FONCTIONNEL INDEX OK  //////////////////////////////////////
+// .favoriteIcon {
+//     border: solid 1px red; //////////////////// TO DELETE
+//     position: relative;
+//     width: 2em;
+
+//     .heart-full, 
+//     .heart-empty {
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//     }
+//     .heart-empty {
+//         color: $text-secondColor; 
+//         transform: translate(-50%, -50%);
+//     }
+//     .heart-full {
+//         background: linear-gradient(to top, $main-color, $second-color);
+//         background-clip: text;
+//         color: transparent;
+//         transform: translate(-50%, -50%) scale(0);
+//         opacity: 0;
+//     }
+    
+//     input[type="checkbox"] {
+//         display: none;
+//     }
+    
+//     .favorite-checkbox {
+//         cursor: pointer;
+//     }
+    
+//     input[type="checkbox"]:checked + .favorite-checkbox{
+//          .heart-full {
+//             animation: favoriteAnimation 250ms ease-in-out forwards;
+//         }   
+//     }
+
+//     @keyframes favoriteAnimation {
+//         0% {
+//             transform: translate(-50%, -50%) scale(0);
+//             opacity: 0;
+//         }
+//         60%, 80% {
+//             transform: translate(-50%, -50%) scale(1.2);
+//             opacity: 1;
+//         }
+//         70%, 100% {
+//             transform: translate(-50%, -50%) scale(1);
+//             opacity: 1;
+//         }
+//     }
+// }
 
 
 

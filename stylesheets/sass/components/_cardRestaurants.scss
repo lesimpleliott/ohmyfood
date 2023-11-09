@@ -40,13 +40,16 @@
         padding: 15px;
         padding-top: 12px;
         line-height: 1.5;
-        border: solid 1px blue; //////////////////// TO DELETE
         
         .card__text {
             flex: 1;
-            border: solid 1px red; //////////////////// TO DELETE
         }
     }
+
+    .favoriteIcon {
+        font-size: 1.8em;
+    }
+
     transition: all 200ms ease-in-out;
 }
 

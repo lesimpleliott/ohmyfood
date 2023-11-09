@@ -313,7 +313,7 @@ loader {
   opacity: 0;
   background: linear-gradient(9deg, #a16be0, #ff93e1);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-  transition: all 300ms ease-out;
+  transition: all 200ms ease-out;
 }
 .button:hover::after {
   opacity: 1;
@@ -365,11 +365,12 @@ loader {
   padding: 15px;
   padding-top: 12px;
   line-height: 1.5;
-  border: solid 1px blue;
 }
 .card__content .card__text {
   flex: 1;
-  border: solid 1px red;
+}
+.card .favoriteIcon {
+  font-size: 1.8em;
 }
 
 .card:hover {
@@ -431,7 +432,6 @@ loader {
 }
 
 .favoriteIcon {
-  border: solid 1px red;
   position: relative;
   width: 2em;
 }
@@ -451,6 +451,7 @@ loader {
           background-clip: text;
   color: transparent;
   transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
 }
 .favoriteIcon input[type=checkbox] {
   display: none;
@@ -459,7 +460,21 @@ loader {
   cursor: pointer;
 }
 .favoriteIcon input[type=checkbox]:checked + .favorite-checkbox .heart-full {
-  transform: translate(-50%, -50%) scale(1.2);
+  animation: favoriteAnimation 250ms ease-in-out forwards;
+}
+@keyframes favoriteAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  60%, 80% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  70%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
 
 .localisation {
@@ -549,6 +564,10 @@ loader {
   color: #9356DC;
   margin-right: 20px;
 }
+.functionning .step .fa-list-ul,
+.functionning .step .fa-mobile-screen-button {
+  color: #7E7E7E;
+}
 .functionning .step .fa-store {
   color: #9356DC;
 }
@@ -615,21 +634,20 @@ loader {
     align-items: center;
   }
 }
-.menusContainer .restaurantTitle {
+.menusContainer .restaurant {
   max-width: 768px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 @media screen and (min-width: 768px) {
-  .menusContainer .restaurantTitle {
+  .menusContainer .restaurant {
     justify-content: center;
   }
 }
-.menusContainer .restaurantTitle .favoriteIcon {
+.menusContainer .restaurant__icon {
   font-size: 2em;
-  margin-left: 50px;
 }
 
 .menu {
