@@ -78,8 +78,12 @@
             color: $main-color;
             margin-right: 15px;
         }       
+        .fa-list-ul, 
+        .fa-mobile-screen-button {
+          color: #7E7E7E;
+        }
         .fa-store {
-            color: $main-color;
+          color: $main-color;
         }
         
         &:hover {

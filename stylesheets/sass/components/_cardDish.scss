@@ -45,12 +45,16 @@ $dish-checkbox: 60px;
     }
 }
 
-input[type="checkbox"] {
-    display: none;
-  }
-  
-input[type="checkbox"]:checked + .dish-checkbox {
-    .dishCard__priceCheck {
-        transform: translateX(0px);
+.dishes {
+    input[type="checkbox"] {
+        display: none;
+    }
+    
+    input[type="checkbox"]:checked + .dish-checkbox {
+        .dishCard__priceCheck {
+            transform: translateX(0px);
+        }
     }
 }
+
+  

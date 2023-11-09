@@ -28,16 +28,18 @@
       align-items: center;
     }
 
-    .restaurantTitle {
+    .restaurant {
       max-width: $tablet;
-      @include myFlex (row, space-between, center);
-        @media screen and (min-width: $tablet) {
-          justify-content: center;
-        }
-        
-      .favoriteIcon {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      @media screen and (min-width: $tablet) {
+        justify-content: center;
+      }    
+
+      &__icon {
         font-size: 2em;
-        margin-left: 50px;
       }
     }
 }
