@@ -30,7 +30,7 @@
     
     input[type="checkbox"]:checked + .favorite-checkbox{
         .heart-full {
-            animation: favoriteAnimation 250ms ease-in-out forwards;
+            animation: favoriteAnimation $favorite-timing ease-in-out forwards;
         }   
     }
 
@@ -39,9 +39,11 @@
             transform: translate(-50%, -50%) scale(0);
             opacity: 0;
         }
+        80% {
+            opacity: 1;  
+        }
         60%, 80% {
             transform: translate(-50%, -50%) scale(1.2);
-            opacity: 1;
         }
         70%, 100% {
             transform: translate(-50%, -50%) scale(1);

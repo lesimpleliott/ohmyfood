@@ -10,17 +10,14 @@ $dish-checkbox: 60px;
     overflow: hidden;
 
     &__content {
-        border: solid 1px red; //////////////////// TO DELETE
         padding: 15px;
-width: 100%;
+        width: 100%;
     }
     
     &__priceCheck {
-        border: solid 1px deepskyblue; //////////////////// TO DELETE
         display: flex;
-        width: 100%;
         
-        // justify-content: flex-end;
+        justify-content: flex-end;
         transform: translateX($dish-checkbox);
 
         &__price {
@@ -47,7 +44,6 @@ width: 100%;
         .dishCard__priceCheck {
             transform: translateX($dish-checkbox - 10px);
         }
-        
     }
 }
 
@@ -62,5 +58,71 @@ width: 100%;
         }
     }
 }
+
+  
+
+
+///// SAVE FONCTIONNEL 
+// $dish-checkbox: 60px; 
+
+// .dish-checkbox {
+//     @include backCards(100%);
+// }
+
+// .dishCard {
+//     display: flex;
+//     cursor: pointer; 
+//     overflow: hidden;
+
+//     &__content {
+//         padding: 15px;
+//         width: 100%;
+//     }
+    
+//     &__priceCheck {
+//         display: flex;
+        
+//         justify-content: flex-end;
+//         transform: translateX($dish-checkbox);
+
+//         &__price {
+//             padding: 10px;
+//             align-self: flex-end;
+//         }
+//         &__check {
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: center;
+//             align-items: center;
+
+//             width: $dish-checkbox;
+//             height: 100%;
+//             background-color: $third-color;
+//             color: white;
+//             font-size: 2em;
+//         }
+//         transition: all 400ms ease-in-out;
+//     }
+    
+//     &:hover {
+//         box-shadow: $shadow-card-dark;
+//         .dishCard__priceCheck {
+//             transform: translateX($dish-checkbox - 10px);
+//         }
+        
+//     }
+// }
+
+// .dishes {
+//     input[type="checkbox"] {
+//         display: none;
+//     }
+    
+//     input[type="checkbox"]:checked + .dish-checkbox {
+//         .dishCard__priceCheck {
+//             transform: translateX(0px);
+//         }
+//     }
+// }
 
   

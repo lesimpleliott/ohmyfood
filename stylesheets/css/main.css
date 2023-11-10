@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css");
 *, ::before, ::after {
   margin: 0;
   padding: 0;
@@ -180,7 +181,7 @@ footer {
     order: 2;
   }
 }
-loader {
+.loader {
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -195,7 +196,7 @@ loader {
     z-index: -2;
   }
 }
-loader .loader__backLoader {
+.loader .loader__backLoader {
   height: 100%;
   width: 100%;
   background-color: white;
@@ -211,7 +212,7 @@ loader .loader__backLoader {
     opacity: 0;
   }
 }
-loader .loader__progress {
+.loader .loader__progress {
   width: 80%;
   max-width: 500px;
   height: 15px;
@@ -223,7 +224,7 @@ loader .loader__progress {
   padding: 2px;
   animation: exit-animation 0ms 0ms forwards ease-in;
 }
-loader .loader__progress__bar {
+.loader .loader__progress__bar {
   width: 0;
   height: 100%;
   border-radius: 20px;
@@ -255,7 +256,7 @@ loader .loader__progress__bar {
     background-color: #9356DC;
   }
 }
-loader .loader__logo {
+.loader .loader__logo {
   display: inline-block;
   position: absolute;
   top: 40%;
@@ -398,14 +399,12 @@ loader .loader__logo {
   overflow: hidden;
 }
 .dishCard__content {
-  border: solid 1px red;
   padding: 15px;
   width: 100%;
 }
 .dishCard__priceCheck {
-  border: solid 1px deepskyblue;
   display: flex;
-  width: 100%;
+  justify-content: flex-end;
   transform: translateX(60px);
   transition: all 400ms ease-in-out;
 }
@@ -467,16 +466,18 @@ loader .loader__logo {
   cursor: pointer;
 }
 .favoriteIcon input[type=checkbox]:checked + .favorite-checkbox .heart-full {
-  animation: favoriteAnimation 250ms ease-in-out forwards;
+  animation: favoriteAnimation 300ms ease-in-out forwards;
 }
 @keyframes favoriteAnimation {
   0% {
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
   }
+  80% {
+    opacity: 1;
+  }
   60%, 80% {
     transform: translate(-50%, -50%) scale(1.2);
-    opacity: 1;
   }
   70%, 100% {
     transform: translate(-50%, -50%) scale(1);
