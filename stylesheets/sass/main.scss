@@ -10,11 +10,11 @@
     './base/_typography';
 
 @import
+    './layouts/_loader', 
     './layouts/_header',
     './layouts/_footer';
 
 @import
-    './components/_loader', 
     './components/_button', 
     './components/_cardRestaurant',
     './components/_cardDish', 

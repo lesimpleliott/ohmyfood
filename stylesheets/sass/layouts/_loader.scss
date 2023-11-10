@@ -94,10 +94,9 @@
         position: absolute;
         top: 40%;
         height: 12vw;
-        max-height: 100px;
+        max-height: 80px;
         object-fit: cover;
         opacity: 0;
-
         animation: logo-load $loader-timing forwards, logo-move $exit-timing $loaderHide-delay ease-in-out forwards;
     }
 

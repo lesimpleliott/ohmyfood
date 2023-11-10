@@ -97,10 +97,126 @@ h3 {
   font-weight: 300;
 }
 
-.dishCard__priceCheck__price {
+.dishCard__price {
   font-size: 15px;
   font-weight: 700;
   color: #353535;
+}
+
+.loader {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: exit-loader 10ms 2900ms forwards;
+}
+@keyframes exit-loader {
+  to {
+    z-index: -2;
+  }
+}
+.loader .loader__backLoader {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  opacity: 1;
+  animation: exit-animation 1000ms 1900ms forwards;
+  animation-timing-function: cubic-bezier(0, 0, 1, 0.2);
+}
+@keyframes exit-animation {
+  0%, 20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loader .loader__progress {
+  width: 80%;
+  max-width: 500px;
+  height: 15px;
+  position: absolute;
+  bottom: 5vh;
+  border: solid 1px #9356DC;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 2px;
+  animation: exit-animation 1000ms 1900ms forwards ease-in;
+}
+.loader .loader__progress__bar {
+  width: 0;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #FF79DA;
+  transform-origin: left;
+  animation: progressBar 1500ms forwards cubic-bezier(0.7, 0, 0.59, 1);
+}
+@keyframes progressBar {
+  0% {
+    width: 0;
+    opacity: 0.5;
+    background-color: #FF79DA;
+  }
+  15%, 20% {
+    width: 12%;
+  }
+  40% {
+    width: 46%;
+  }
+  52%, 60% {
+    width: 75%;
+  }
+  70% {
+    width: 79%;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+    background-color: #9356DC;
+  }
+}
+.loader .loader__logo {
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  height: 12vw;
+  max-height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  animation: logo-load 1500ms forwards, logo-move 1000ms 1900ms ease-in-out forwards;
+}
+@keyframes logo-move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-42vh) scale(0.2);
+    opacity: 0;
+  }
+}
+@keyframes logo-load {
+  0% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  52% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 header {
@@ -181,122 +297,6 @@ footer {
     order: 2;
   }
 }
-.loader {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: exit-loader 10ms 0ms forwards;
-}
-@keyframes exit-loader {
-  to {
-    z-index: -2;
-  }
-}
-.loader .loader__backLoader {
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  opacity: 1;
-  animation: exit-animation 0ms 0ms forwards;
-  animation-timing-function: cubic-bezier(0, 0, 1, 0.2);
-}
-@keyframes exit-animation {
-  0%, 20% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-.loader .loader__progress {
-  width: 80%;
-  max-width: 500px;
-  height: 15px;
-  position: absolute;
-  bottom: 5vh;
-  border: solid 1px #9356DC;
-  border-radius: 15px;
-  overflow: hidden;
-  padding: 2px;
-  animation: exit-animation 0ms 0ms forwards ease-in;
-}
-.loader .loader__progress__bar {
-  width: 0;
-  height: 100%;
-  border-radius: 20px;
-  background-color: #FF79DA;
-  transform-origin: left;
-  animation: progressBar 0ms forwards cubic-bezier(0.7, 0, 0.59, 1);
-}
-@keyframes progressBar {
-  0% {
-    width: 0;
-    opacity: 0.5;
-    background-color: #FF79DA;
-  }
-  15%, 20% {
-    width: 12%;
-  }
-  40% {
-    width: 46%;
-  }
-  52%, 60% {
-    width: 75%;
-  }
-  70% {
-    width: 79%;
-  }
-  100% {
-    width: 100%;
-    opacity: 1;
-    background-color: #9356DC;
-  }
-}
-.loader .loader__logo {
-  display: inline-block;
-  position: absolute;
-  top: 40%;
-  height: 12vw;
-  max-height: 100px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  opacity: 0;
-  animation: logo-load 0ms forwards, logo-move 0ms 0ms ease-in-out forwards;
-}
-@keyframes logo-move {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-42vh) scale(0.2);
-    opacity: 0;
-  }
-}
-@keyframes logo-load {
-  0% {
-    opacity: 0.1;
-  }
-  20% {
-    opacity: 0.3;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  52% {
-    opacity: 0.8;
-  }
-  70% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .button {
   display: inline-block;
   min-width: 180px;
@@ -319,8 +319,8 @@ footer {
   right: 0;
   border-radius: 25px;
   opacity: 0;
-  background: linear-gradient(9deg, #a16be0, #ff93e1);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(9deg, #985ede, #ff83dd);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   transition: all 200ms ease-out;
 }
 .button:hover::after {
@@ -386,55 +386,88 @@ footer {
   transform: scale(1.01);
 }
 
-.dish-checkbox {
+.dishCard {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   width: 100%;
-}
-
-.dishCard {
-  display: flex;
-  cursor: pointer;
-  overflow: hidden;
-}
-.dishCard__content {
-  padding: 15px;
-  width: 100%;
-}
-.dishCard__priceCheck {
-  display: flex;
-  justify-content: flex-end;
-  transform: translateX(60px);
-  transition: all 400ms ease-in-out;
-}
-.dishCard__priceCheck__price {
-  padding: 10px;
-  align-self: flex-end;
-}
-.dishCard__priceCheck__check {
+  height: 70px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+}
+.dishCard input[type=checkbox] {
+  display: none;
+}
+.dishCard__content {
+  height: 100%;
+  flex: 1;
+  width: 50%;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.5;
+}
+.dishCard__content__title, .dishCard__content__subtitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dishCard__price {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  line-height: 1.5;
+  padding: 10px;
+}
+.dishCard__check {
+  width: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 100%;
-  background-color: #99E2D0;
+  background: #99E2D0;
   color: white;
-  font-size: 2em;
+  font-size: 1.8em;
+  transition: width 200ms ease-in-out;
+}
+.dishCard__check .fa-circle-check {
+  transform: scale(0);
 }
 .dishCard:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
 }
-.dishCard:hover .dishCard__priceCheck {
-  transform: translateX(50px);
+.dishCard:hover .dishCard__check {
+  width: 10px;
 }
-
-.dishes input[type=checkbox] {
-  display: none;
+.dishCard input[type=checkbox]:checked ~ .dishCard__check {
+  animation: check-animation 350ms ease-in-out forwards;
 }
-.dishes input[type=checkbox]:checked + .dish-checkbox .dishCard__priceCheck {
-  transform: translateX(0px);
+.dishCard input[type=checkbox]:checked ~ .dishCard__check .fa-circle-check {
+  animation: check-spin 200ms 150ms ease-in-out forwards;
+}
+@keyframes check-animation {
+  0% {
+    width: 200ms;
+  }
+  100% {
+    width: 60px;
+  }
+}
+@keyframes check-spin {
+  0% {
+    transform: scale(0) rotate(0);
+  }
+  80% {
+    transform: scale(1.2) rotate(1turn);
+  }
+  100% {
+    transform: scale(1) rotate(1turn);
+  }
 }
 
 .favoriteIcon {
@@ -610,11 +643,8 @@ footer {
   }
 }
 
-.mainMenu {
+.mainRestaurant {
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .hero__image {
@@ -625,55 +655,52 @@ footer {
   margin-bottom: -40px;
 }
 
-.menusContainer {
-  background-color: #F7F7F7;
-  border-radius: 40px 40px 0 0;
-  padding: 30px 5vw;
+.menu {
   width: 100%;
   max-width: 1024px;
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
+  padding: 30px 5vw;
+  background: #F7F7F7;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
 }
-.menusContainer .restaurant {
-  max-width: 768px;
+.menu__info {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
-  .menusContainer .restaurant {
+  .menu__info {
     justify-content: center;
   }
 }
-.menusContainer .restaurant__icon {
-  font-size: 2em;
+.menu__info__icon {
+  font-size: 1.8em;
 }
-
-.menu {
+.menu__content {
   width: 100%;
-  max-width: 768px;
 }
 @media screen and (min-width: 768px) {
-  .menu {
-    width: 80%;
+  .menu__content {
+    width: 90%;
   }
 }
 @media screen and (min-width: 1024px) {
-  .menu {
+  .menu__content {
     width: 70%;
   }
 }
-.menu h3 {
+.menu__content .content__category h3 {
   position: relative;
   margin-top: 40px;
   margin-bottom: 20px;
 }
-.menu h3::after {
+.menu__content .content__category h3::after {
   content: "";
   position: absolute;
   bottom: -5px;
@@ -682,124 +709,53 @@ footer {
   height: 3px;
   background-color: #99E2D0;
 }
-
-.dishes {
+.menu__content .content__category .cards {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
+}
+.menu__order {
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 
-.orderButton {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.content__category h3 {
+  animation: dishCard-Anim;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
 }
-
-.cardAnim-1 {
-  animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+.content__category .cards .dishCard:nth-child(1) {
   opacity: 0;
-  animation-delay: 100ms;
-}
-
-.cardAnim-2 {
   animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  opacity: 0;
-  animation-delay: 200ms;
+  animation-delay: calc(200ms * 1);
 }
-
-.cardAnim-3 {
-  animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+.content__category .cards .dishCard:nth-child(2) {
   opacity: 0;
-  animation-delay: 300ms;
+  animation-name: dishCard-Anim;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-delay: calc(200ms * 2);
 }
-
-.cardAnim-4 {
-  animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+.content__category .cards .dishCard:nth-child(3) {
   opacity: 0;
-  animation-delay: 400ms;
+  animation-name: dishCard-Anim;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-delay: calc(200ms * 3);
 }
-
-.cardAnim-5 {
-  animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+.content__category .cards .dishCard:nth-child(4) {
   opacity: 0;
-  animation-delay: 500ms;
-}
-
-.cardAnim-6 {
   animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  opacity: 0;
-  animation-delay: 600ms;
-}
-
-.cardAnim-7 {
-  animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  opacity: 0;
-  animation-delay: 700ms;
-}
-
-.cardAnim-8 {
-  animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  opacity: 0;
-  animation-delay: 800ms;
-}
-
-.cardAnim-9 {
-  animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  opacity: 0;
-  animation-delay: 900ms;
-}
-
-.cardAnim-10 {
-  animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  opacity: 0;
-  animation-delay: 1000ms;
-}
-
-.cardAnim-11 {
-  animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  opacity: 0;
-  animation-delay: 1100ms;
-}
-
-.cardAnim-12 {
-  animation-name: dishCard-Anim;
-  animation-duration: 1500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  opacity: 0;
-  animation-delay: 1200ms;
+  animation-delay: calc(200ms * 4);
 }
 
 @keyframes dishCard-Anim {
