@@ -1,8 +1,5 @@
-.mainMenu {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.mainRestaurant {
+    background-color: white;
 }
 
 .hero__image {
@@ -12,102 +9,104 @@
     margin-bottom: -40px;
 }
 
-.menusContainer {
-    background-color: $background-color;
-    border-radius: 40px 40px 0 0;
-    padding: 30px $safeZone-sidePage;
+.menu {
     width: 100%;
     max-width: $desktop;
-    position: relative;
-    z-index: 2;
+    padding: 30px $safeZone-sidePage;
+    background: $background-color;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     overflow: hidden;
-
-    @media screen and (min-width: $tablet) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .restaurant {
-      max-width: $tablet;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      @media screen and (min-width: $tablet) {
-        justify-content: center;
-      }    
-
-      &__icon {
-        font-size: 2em;
-      }
-    }
-}
-
-.menu {
-  width: 100%;
-  max-width: $tablet;
-  @media screen and (min-width: $tablet) {
-    width: 80%;
-  }
-  @media screen and (min-width: $desktop) {
-    width: 70%;
-  }
-
-  h3{
-    position: relative;
-    margin-top: 40px;
-    margin-bottom: 20px;
     
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 40px;
-      height: 3px; 
-      background-color: $third-color;
+    // INFOS
+    &__info {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include responsive-tablet {
+            justify-content: center;
+        }
+        &__icon {
+            font-size: 1.8em;
+        }
     }
-  } 
+    
+    // CARDS 
+    &__content {
+        width: 100%;
+        @include responsive-tablet {
+            width: 90%;
+        }
+        @include responsive-desktop {
+            width: 70%;
+        }
+        
+        .content__category {
+            h3{
+                position: relative;
+                margin-top: 40px;
+                margin-bottom: 20px;
+                
+                &::after {
+                  content: '';
+                  position: absolute;
+                  bottom: -5px;
+                  left: 0;
+                  width: 40px;
+                  height: 3px; 
+                  background-color: $third-color;
+                }
+            } 
+        
+            .cards {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    }
+    
+    // BOUTON "COMMANDER"
+    &__order {
+        margin-top: 30px;
+        margin-bottom: 40px;    
+    }
 }
 
-.dishes {
-    @include myFlex(column, center, center);
-    gap: 12px;
+
+// ANIMATION dishCards
+.content__category {
+    h3 {
+        animation: dishCard-Anim; 
+        animation-duration: calc($dishCard-timing / 2);
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+    }
+    
+    @for $i from 1 through 4 { 
+        .cards .dishCard:nth-child(#{$i}) {
+            opacity: 0;
+            animation-name: dishCard-Anim;
+            animation-duration: $dishCard-timing;
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation-delay: calc(#{$dishCard-delay} * #{$i});
+        }
+    }
 }
 
-.orderButton {
-    @include myFlex; 
-    margin-top: 20px;
-    margin-bottom: 20px;
+@keyframes dishCard-Anim {
+    0% {
+        opacity: 0;
+        transform: translateX(-110%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
-
-
-///////////////////
-//// ANIMATION ///////
-
-$cardAnim-timing: 1500ms;
-$cardAnim-delay: 100ms;
-
-@for $i from 1 through 12 {
-  .cardAnim-#{$i} {
-    animation-name: cardAnim;
-    animation-duration: $cardAnim-timing;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-    opacity: 0;
-    animation-delay: #{$cardAnim-delay * $i};
-  }
-}
-
-@keyframes cardAnim {
-0% {
-  opacity: 0;
-  transform: translateX(-110%);
-}
-100% {
-  opacity: 1;
-  transform: translateX(0);
-  }
-}
-

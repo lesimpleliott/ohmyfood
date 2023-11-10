@@ -9,27 +9,47 @@ $form-color: darken($background-color, 10%);
 
 // COLORS
 $main-color: #9356DC; 
-$main-color-light: lighten($main-color, 5%);
+$main-color-light: lighten($main-color, 2%);
 $second-color: #FF79DA; 
-$second-color-light: lighten($second-color, 5%);
+$second-color-light: lighten($second-color, 2%);
 $third-color: #99E2D0;
 $third-color-dark: darken(#99E2D0, 35%);
 
+// OMBRES
+$shadow-color: black;
+$shadow-button-light: 2px 2px 5px rgba($shadow-color, .2);
+$shadow-button-dark: 2px 2px 5px rgba($shadow-color, .3);
+$shadow-card-light: 0px 4px 15px rgba($shadow-color, .15);
+$shadow-card-dark: 0px 4px 15px rgba($shadow-color, .25);
+
 // SPACES
 $safeZone-section: 45px; 
-$safeZone-sidePage: 5vw; // Side Page //padding R&L
-
-//VARIABLES LOADER
-$loader-timing: 1500ms; 
-$loaderFull-displayTime: 500ms;
-$loaderHide-delay: $loader-timing + $loaderFull-displayTime; 
-$exit-timing: 1000ms; 
-$exitLoader-delay: $loader-timing + $loaderFull-displayTime + $exit-timing;
+$safeZone-sidePage: 5vw;
 
 // MEDIA QUERIES
 $tablet: 768px; 
 $desktop: 1024px;
 
-// @media screen and (min-width: $tablet) {
-//     $pageSideSafeZone: xxxx; 
-//   }
+
+// ANIMATION LOADER
+$on-off:1; //0:off -1:on
+$loader-timing: 1500ms * $on-off; 
+$loaderFull-displayTime: 400ms * $on-off;
+$loaderHide-delay: $loader-timing + $loaderFull-displayTime; 
+$exit-timing: 1000ms * $on-off; 
+$exitLoader-delay: $loader-timing + $loaderFull-displayTime + $exit-timing;
+
+// ANIMATION FAVORITE
+$favorite-timing: 300ms; 
+
+// ANIMATION MENU 
+// check 
+$check-timing-hover: 200ms;
+$check-timing: 350ms; 
+$check-spin-delay: 150ms;
+$check-spin-timing: $check-timing - $check-spin-delay;
+// dishCard entrance
+$dishCard-timing: 1000ms; 
+$dishCard-delay: 200ms;
+
+
