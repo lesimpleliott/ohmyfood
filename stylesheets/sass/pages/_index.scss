@@ -7,18 +7,18 @@
     width: 100vw;
     height: 50px;
     background-color: $form-color;
-    
-    .fa-solid {
+
+    &__icon {
         color: $text-secondColor; 
     }
-    
-    input {
-        outline: none;
+
+    &__input {
         @extend %main-text;
+        outline: none;
         width: 130px;
         border: none; 
         background-color: inherit;
-        margin: 0 5px;
+        margin: 0 10px;
     }
 } 
 
@@ -26,114 +26,149 @@
 .intro {
     padding: $safeZone-section 30px;
     text-align: center;
-    
-    .subtitle {
-        margin-top: 15px;
-    }
 }
 
 
-// FONCTIONNEMENT ///////////////////////
+// // FONCTIONNEMENT ///////////////////////
 .functionning {
     padding: $safeZone-section $safeZone-sidePage;
-    background-color: white; 
     width: 100vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
-    .container-functionning {
-        width: 100%;
-        max-width: $desktop;
+    position: relative;
+
+    // gestion du fond blanc 
+    &::before {
+        content: "";
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: -100vw;
+        width: 200vw;
+        height: 100%;
+        z-index: -10; 
     }
-    
+
     &__steps {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        
+        // margin-top: 25px;
         gap: 25px;
-        margin-top: 25px;
-        @include responsive-tablet {
+
+        @include responsive($tablet) {
             flex-direction: row;
         }
-        @include responsive-desktop {
-            max-width: $desktop;
+        @include responsive($desktop) {
+            gap: 40px;
         }
-    }
+    }    
     
-    .step {
-        background-color: $background-color;
-        border-radius: 20px;
+    @include responsive($desktopPlus) {
+        max-width: $desktop;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    border-radius: 20px;
+    background: $background-color;
+    box-shadow: $shadow-card-light;
+    padding-right: 15px;
+    padding-left: 25px;
+    position: relative;
+    
+
+    &__number {
+        $number-size: 24px; 
+        width: $number-size;
+        height: $number-size;
+        background-color: $main-color;
+        @extend %main-text-contrast;
+        border-radius: 50%;
         display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
+        position: absolute;
+        left: 0; 
+        transform: translateX(-50%);
+        transform-origin: bottom;
+    }
+
+    &__icon {
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        color: $text-secondColor;
+        margin-right: 15px;
+    }
+    .fa-store {
+        color: $main-color;
+    }
+
+    // ANIMATION FONCTIONNING 
+    &:hover {
+        animation: functionCard-anim 500ms ease-in-out forwards;
         
-        width: calc(100% - 6px);
-        height: 72px;
-        box-shadow: $shadow-card-light;
-        position: relative;
-        padding: 0 15px 0 25px;
-        transition: all 300ms ease-in-out; 
-              
-        &__number {
-            width: 24px;
-            height: 24px;
-            background-color: $main-color;
-            @extend %main-text-contrast;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            
-            position: absolute;
-            left: -12px;
-        }      
-        &__icon {
-            color: $main-color;
-            margin-right: 15px;
-        }       
-        .fa-list-ul, 
-        .fa-mobile-screen-button {
-            color: #7E7E7E;
+        @keyframes functionCard-anim {
+            to {
+                box-shadow: $shadow-card-dark;
+                background-color: lighten($main-color, 30%);
+            }
         }
-        .fa-store {
-            color: $main-color;
+
+        .step__number {
+            animation: functionNumber-anim 1500ms infinite;
+            animation-iteration-count: infinite;
         }
+
+        @keyframes functionNumber-anim {
+            // TEST1 - pas ouf // à perfectionner ! 
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0) scale(1, 1);
+            }
         
-        &:hover {
-            box-shadow: $shadow-card-dark;
-            background-color: lighten($main-color, 30%);
+            40% {
+                transform: translateX(-50%) translateY(-30px) scale(1.1, .8);
+            }
+        
+            60% {
+                transform: translateX(-50%) translateY(-15px) scale(.9, 1.2);
+            }
         }
     }
 }
 
-// RESATURANTS ///////////////////////
+
+// // RESTAURANTS ///////////////////////
 .restaurants {
-    padding: $safeZone-section $safeZone-sidePage;
-    background-color: $background-color; 
     width: 100vw;
+    padding: $safeZone-section $safeZone-sidePage;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-    .container-restaurants {
-        width: 100%;
+    @include responsive($desktopPlus) {
         max-width: $desktop;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     &__cards {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
-        margin-top: 25px;
 
-        @include responsive-tablet {
+        @include responsive($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
             row-gap: 35px;
         }
-    }   
+    }
 }

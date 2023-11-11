@@ -1,13 +1,14 @@
 .mainRestaurant {
     background-color: white;
+    
+    .hero__image {
+        width: 100vw;
+        height: 275px;
+        object-fit: cover;
+        margin-bottom: -40px;
+    }
 }
 
-.hero__image {
-    width: 100vw;
-    height: 275px;
-    object-fit: cover;
-    margin-bottom: -40px;
-}
 
 .menu {
     width: 100%;

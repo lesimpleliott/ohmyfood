@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap');
-
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css');
-
 
 
 body {
@@ -34,6 +32,7 @@ h2 {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.5;
+    margin-bottom: 25px;
 }
 h3 {
     color: $text-mainColor;
@@ -53,16 +52,19 @@ h3 {
 .button {
     font-weight: 500;
     font-size: 16px;
-    color: white;
 }
 
 
 // TYPO CARDS RESTAURANTS
-.card__title {
+.hero__new {
+    font-size: 14px;
+    font-weight: 500;
+}
+.content__text__title {
     font-size: 18px;
     font-weight: 700;
 }
-.card__subtitle {
+.content__text__subtitle {
     font-size: 17px;
     font-weight: 300;
 }

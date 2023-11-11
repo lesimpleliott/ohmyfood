@@ -18,6 +18,13 @@
     }
 }
 
+@mixin responsive($responsive-width) {
+    @media screen and (min-width:$responsive-width) {
+        @content;
+    }
+}
+
+
 
 ///// TESTING - ToDelet 
 @mixin testing($color: red, $size: 1px) {

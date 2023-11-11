@@ -26,7 +26,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.localisation input, .functionning .step__number, footer a,
+.localisation__input, .step__number, footer a,
 p {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -34,7 +34,7 @@ p {
   color: #353535;
 }
 
-.functionning .step__number, footer a {
+.step__number, footer a {
   color: white;
 }
 
@@ -49,6 +49,7 @@ h2 {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.5;
+  margin-bottom: 25px;
 }
 
 h3 {
@@ -70,15 +71,19 @@ h3 {
 .button {
   font-weight: 500;
   font-size: 16px;
-  color: white;
 }
 
-.card__title {
+.hero__new {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.content__text__title {
   font-size: 18px;
   font-weight: 700;
 }
 
-.card__subtitle {
+.content__text__subtitle {
   font-size: 17px;
   font-weight: 300;
 }
@@ -111,7 +116,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: exit-loader 10ms 2900ms forwards;
+  animation: exit-loader 10ms 3000ms forwards;
 }
 @keyframes exit-loader {
   to {
@@ -123,7 +128,7 @@ h3 {
   width: 100%;
   background-color: white;
   opacity: 1;
-  animation: exit-animation 1000ms 1900ms forwards;
+  animation: exit-animation 1000ms 2000ms forwards;
   animation-timing-function: cubic-bezier(0, 0, 1, 0.2);
 }
 @keyframes exit-animation {
@@ -144,7 +149,7 @@ h3 {
   border-radius: 15px;
   overflow: hidden;
   padding: 2px;
-  animation: exit-animation 1000ms 1900ms forwards ease-in;
+  animation: exit-animation 1000ms 2000ms forwards ease-in;
 }
 .loader .loader__progress__bar {
   width: 0;
@@ -187,7 +192,7 @@ h3 {
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0;
-  animation: logo-load 1500ms forwards, logo-move 1000ms 1900ms ease-in-out forwards;
+  animation: logo-load 1500ms forwards, logo-move 1000ms 2000ms ease-in-out forwards;
 }
 @keyframes logo-move {
   0% {
@@ -259,6 +264,16 @@ footer {
     gap: 45px;
   }
 }
+@media screen and (min-width: 768px) {
+  footer {
+    background-color: aqua;
+  }
+}
+@media screen and (min-width: 1024px) {
+  footer {
+    background-color: lightcoral;
+  }
+}
 
 .footer__logo .logo {
   width: 100px;
@@ -304,6 +319,7 @@ footer {
   margin-top: 30px;
   padding: 15px 25px;
   text-align: center;
+  color: white;
   background: linear-gradient(9deg, #9356DC, #FF79DA);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -327,63 +343,131 @@ footer {
   opacity: 1;
 }
 
-.card {
+.favoriteIcon {
+  position: relative;
+  padding: 0 30px;
+}
+.favoriteIcon .heart-full,
+.favoriteIcon .heart-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.favoriteIcon .heart-empty {
+  color: #353535;
+  transform: translate(-50%, -50%);
+}
+.favoriteIcon .heart-full {
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+.favoriteIcon input[type=checkbox] {
+  display: none;
+}
+.favoriteIcon .favorite-checkbox {
+  cursor: pointer;
+}
+.favoriteIcon input[type=checkbox]:checked + .favorite-checkbox .heart-full {
+  animation: favoriteAnimation 300ms ease-in-out forwards;
+}
+@keyframes favoriteAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  60%, 80% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  70%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.restaurantCard {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   width: 100%;
+  overflow: hidden;
   transition: all 200ms ease-in-out;
 }
 @media screen and (min-width: 768px) {
-  .card {
+  .restaurantCard {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     width: 48%;
   }
 }
-.card__hero {
+.restaurantCard:hover {
+  transform: scale(101%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+.restaurantCard:active {
+  transition-duration: 100ms;
+  transform: scale(100%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+.restaurantCard .hero {
+  height: 175px;
+  width: 100%;
+  display: block;
   position: relative;
 }
-.card__hero__image {
+.restaurantCard .hero__image {
   width: 100%;
-  height: 170px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.card__hero__new {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: #99E2D0;
-  padding: 10px 12px;
-  border-radius: 2px;
-  font-family: "Roboto", sans-serif;
+.restaurantCard .hero__new {
+  height: 30px;
+  width: 80px;
+  background: #99E2D0;
   color: #2c9c81;
-  font-weight: 500;
-  font-size: 14px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 13px;
+  right: 10px;
 }
-.card__hero .nonVisible {
+.restaurantCard .hero .nonVisible {
   display: none;
 }
-.card__content {
+.restaurantCard .content {
+  height: 77px;
+  width: 100%;
   display: flex;
-  padding: 15px;
-  padding-top: 12px;
-  line-height: 1.5;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.card__content .card__text {
+.restaurantCard .content__text {
+  width: 70%;
   flex: 1;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+  padding-right: 0;
 }
-.card .favoriteIcon {
+.restaurantCard .content__text__title, .restaurantCard .content__text__subtitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.restaurantCard .content__icon {
   font-size: 1.8em;
-}
-
-.card:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-  transform: scale(1.01);
 }
 
 .dishCard {
@@ -393,6 +477,8 @@ footer {
   width: 100%;
   height: 70px;
   display: flex;
+  width: 100%;
+  cursor: pointer;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
@@ -470,54 +556,6 @@ footer {
   }
 }
 
-.favoriteIcon {
-  position: relative;
-  width: 2em;
-}
-.favoriteIcon .heart-full,
-.favoriteIcon .heart-empty {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-.favoriteIcon .heart-empty {
-  color: #353535;
-  transform: translate(-50%, -50%);
-}
-.favoriteIcon .heart-full {
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-}
-.favoriteIcon input[type=checkbox] {
-  display: none;
-}
-.favoriteIcon .favorite-checkbox {
-  cursor: pointer;
-}
-.favoriteIcon input[type=checkbox]:checked + .favorite-checkbox .heart-full {
-  animation: favoriteAnimation 300ms ease-in-out forwards;
-}
-@keyframes favoriteAnimation {
-  0% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-  }
-  80% {
-    opacity: 1;
-  }
-  60%, 80% {
-    transform: translate(-50%, -50%) scale(1.2);
-  }
-  70%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-}
-
 .localisation {
   display: flex;
   flex-direction: row;
@@ -527,43 +565,44 @@ footer {
   height: 50px;
   background-color: #dedede;
 }
-.localisation .fa-solid {
+.localisation__icon {
   color: #353535;
 }
-.localisation input {
+.localisation__input {
   outline: none;
   width: 130px;
   border: none;
   background-color: inherit;
-  margin: 0 5px;
+  margin: 0 10px;
 }
 
 .intro {
   padding: 45px 30px;
   text-align: center;
 }
-.intro .subtitle {
-  margin-top: 15px;
-}
 
 .functionning {
   padding: 45px 5vw;
-  background-color: white;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: relative;
 }
-.functionning .container-functionning {
-  width: 100%;
-  max-width: 1024px;
+.functionning::before {
+  content: "";
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  width: 200vw;
+  height: 100%;
+  z-index: -10;
 }
 .functionning__steps {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 25px;
-  margin-top: 25px;
 }
 @media screen and (min-width: 768px) {
   .functionning__steps {
@@ -572,73 +611,102 @@ footer {
 }
 @media screen and (min-width: 1024px) {
   .functionning__steps {
-    max-width: 1024px;
+    gap: 40px;
   }
 }
-.functionning .step {
-  background-color: #F7F7F7;
-  border-radius: 20px;
+@media screen and (min-width: 1104px) {
+  .functionning {
+    max-width: 1024px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.step {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
-  width: calc(100% - 6px);
+  width: 100%;
   height: 72px;
+  border-radius: 20px;
+  background: #F7F7F7;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  padding-right: 15px;
+  padding-left: 25px;
   position: relative;
-  padding: 0 15px 0 25px;
-  transition: all 300ms ease-in-out;
 }
-.functionning .step__number {
+.step__number {
   width: 24px;
   height: 24px;
   background-color: #9356DC;
-  border-radius: 12px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: -12px;
+  left: 0;
+  transform: translateX(-50%);
+  transform-origin: bottom;
 }
-.functionning .step__icon {
-  color: #9356DC;
+.step__icon {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  color: #353535;
   margin-right: 15px;
 }
-.functionning .step .fa-list-ul,
-.functionning .step .fa-mobile-screen-button {
-  color: #7E7E7E;
-}
-.functionning .step .fa-store {
+.step .fa-store {
   color: #9356DC;
 }
-.functionning .step:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-  background-color: #e4d5f6;
+.step:hover {
+  animation: functionCard-anim 500ms ease-in-out forwards;
+}
+@keyframes functionCard-anim {
+  to {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    background-color: #e4d5f6;
+  }
+}
+.step:hover .step__number {
+  animation: functionNumber-anim 1500ms infinite;
+  animation-iteration-count: infinite;
+}
+@keyframes functionNumber-anim {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0) scale(1, 1);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-30px) scale(1.1, 0.8);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-15px) scale(0.9, 1.2);
+  }
 }
 
 .restaurants {
-  padding: 45px 5vw;
-  background-color: #F7F7F7;
   width: 100vw;
+  padding: 45px 5vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
-.restaurants .container-restaurants {
-  width: 100%;
-  max-width: 1024px;
+@media screen and (min-width: 1104px) {
+  .restaurants {
+    max-width: 1024px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .restaurants__cards {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
-  margin-top: 25px;
 }
 @media screen and (min-width: 768px) {
   .restaurants__cards {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
     row-gap: 35px;
   }
 }
@@ -646,8 +714,7 @@ footer {
 .mainRestaurant {
   background-color: white;
 }
-
-.hero__image {
+.mainRestaurant .hero__image {
   width: 100vw;
   height: 275px;
   -o-object-fit: cover;

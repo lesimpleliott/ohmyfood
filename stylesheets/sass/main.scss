@@ -15,10 +15,10 @@
     './layouts/_footer';
 
 @import
-    './components/_button', 
-    './components/_cardRestaurant',
-    './components/_cardDish', 
-    './components/_favorite';
+    './components/button', 
+    './components/favorite',
+    './components/card-restaurant',
+    './components/card-dish'; 
     
 @import
     './pages/index', 
