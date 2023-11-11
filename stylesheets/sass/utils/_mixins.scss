@@ -7,23 +7,11 @@
 }
 
 // MEDIAS QUERIES 
-@mixin responsive-tablet {
-    @media screen and (min-width: $tablet) {
-        @content;
-    }
-}
-@mixin responsive-desktop {
-    @media screen and (min-width:$desktop) {
-        @content;
-    }
-}
-
 @mixin responsive($responsive-width) {
     @media screen and (min-width:$responsive-width) {
         @content;
     }
 }
-
 
 
 ///// TESTING - ToDelet 

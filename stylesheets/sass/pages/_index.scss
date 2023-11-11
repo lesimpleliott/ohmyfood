@@ -83,7 +83,6 @@
     padding-right: 15px;
     padding-left: 25px;
     position: relative;
-    
 
     &__number {
         $number-size: 24px; 
@@ -98,7 +97,6 @@
         position: absolute;
         left: 0; 
         transform: translateX(-50%);
-        transform-origin: bottom;
     }
 
     &__icon {
@@ -114,32 +112,12 @@
 
     // ANIMATION FONCTIONNING 
     &:hover {
-        animation: functionCard-anim 500ms ease-in-out forwards;
+        animation: functionCard-anim 300ms ease-in-out forwards;
         
         @keyframes functionCard-anim {
             to {
                 box-shadow: $shadow-card-dark;
                 background-color: lighten($main-color, 30%);
-            }
-        }
-
-        .step__number {
-            animation: functionNumber-anim 1500ms infinite;
-            animation-iteration-count: infinite;
-        }
-
-        @keyframes functionNumber-anim {
-            // TEST1 - pas ouf // à perfectionner ! 
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0) scale(1, 1);
-            }
-        
-            40% {
-                transform: translateX(-50%) translateY(-30px) scale(1.1, .8);
-            }
-        
-            60% {
-                transform: translateX(-50%) translateY(-15px) scale(.9, 1.2);
             }
         }
     }
