@@ -32,18 +32,23 @@ $desktop: 1024px;
 $desktopPlus: $desktop + 80px;
 
 // ANIMATION LOADER
-$on-off:1; //0:off -1:on
+$on-off: 1; //0:off -1:on
 $loader-timing: 1500ms * $on-off; 
 $loaderFull-displayTime: 500ms * $on-off;
 $loaderHide-delay: $loader-timing + $loaderFull-displayTime; 
 $exit-timing: 1000ms * $on-off; 
 $exitLoader-delay: $loader-timing + $loaderFull-displayTime + $exit-timing;
 
+// ANIMATION NUMBERS FUCNTIONNING
+$translateX: translateX(-50%);
+$numberAnim-timing: 1500ms; 
+
 // ANIMATION FAVORITE
 $favorite-timing: 300ms; 
 
 // ANIMATION MENU 
 // check 
+$checkSize-hover: 10px;
 $check-timing-hover: 200ms;
 $check-timing: 350ms; 
 $check-spin-delay: 150ms;

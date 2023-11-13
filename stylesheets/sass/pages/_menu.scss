@@ -40,6 +40,7 @@
     // CARDS 
     &__content {
         width: 100%;
+      
         @include responsive($tablet) {
             width: 90%;
         }

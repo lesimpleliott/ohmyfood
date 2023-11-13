@@ -6,12 +6,12 @@
     transition: all 200ms ease-in-out;
 
     &:hover {
-        transform: scale(101%);
+        transform: scale(1.01);
         box-shadow: $shadow-card-dark;
     }
     &:active {
         transition-duration: 100ms;
-        transform: scale(100%);
+        transform: scale(.99);
         box-shadow: $shadow-card-dark;
     }
     

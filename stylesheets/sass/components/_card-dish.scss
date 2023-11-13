@@ -62,8 +62,7 @@
     &:hover {
         box-shadow: $shadow-card-dark;
         .dishCard__check {
-            $check-hover: 10px;
-            width: $check-hover;
+            width: $checkSize-hover;
         }
     }
 
@@ -76,7 +75,7 @@
 
     @keyframes check-animation {
         0% {
-            width: $check-timing-hover;
+            width: $checkSize-hover;
         }
         100% {
             width: 60px;
