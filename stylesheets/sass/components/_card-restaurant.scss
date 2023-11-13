@@ -1,9 +1,7 @@
 
 .restaurantCard {
-    @include backCards(100%);
-    @include responsive($tablet) {
-        @include backCards(48%);
-    }
+    @include backCards();
+
     overflow: hidden;
     transition: all 200ms ease-in-out;
 

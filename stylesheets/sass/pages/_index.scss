@@ -168,5 +168,12 @@
             flex-wrap: wrap;
             row-gap: 35px;
         }
+
+        .restaurantCard {
+            width: 100%;
+            @include responsive($tablet) {
+                width: 48%;
+            }
+        }
     }
 }
