@@ -9,11 +9,6 @@
         transform: scale(1.01);
         box-shadow: $shadow-card-dark;
     }
-    &:active {
-        transition-duration: 100ms;
-        transform: scale(.99);
-        box-shadow: $shadow-card-dark;
-    }
     
     .hero {
         height: 175px;
