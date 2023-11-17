@@ -116,28 +116,218 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: exit-loader 10ms 3000ms forwards;
+  animation: exit-animation 1000ms 2500ms forwards ease-in-out;
 }
-@keyframes exit-loader {
-  to {
+@keyframes exit-animation {
+  0% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
     z-index: -2;
   }
 }
 .loader .loader__backLoader {
   height: 100%;
   width: 100%;
-  background-color: white;
+  background-color: lightgrey;
   opacity: 1;
-  animation: exit-animation 1000ms 2000ms forwards;
-  animation-timing-function: cubic-bezier(0, 0, 1, 0.2);
 }
-@keyframes exit-animation {
-  0%, 20% {
-    opacity: 1;
+.loader__balls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 40%;
+}
+.loader__balls__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  height: 100px;
+  width: 40px;
+}
+.loader__balls__group .ball {
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  position: absolute;
+  transform-origin: bottom;
+}
+.loader__balls__group :nth-child(1) {
+  background-color: #99E2D0;
+}
+.loader__balls__group :nth-child(2) {
+  background-color: #FF79DA;
+}
+.loader__balls__group :nth-child(3) {
+  background-color: #9356DC;
+}
+.loader__balls__group :nth-child(1) {
+  animation-name: jumpinBallAnimation1;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+@keyframes jumpinBallAnimation1 {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+  10% {
+    transform: translateY(0) scale(1.3, 0.8);
+  }
+  11% {
+    transform: translateY(0) scale(0.7, 1.2);
+    animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
+  }
+  39% {
+    transform: translateY(-75px) scale(1);
+    animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
+  }
+  40% {
+    transform: translateY(-75px) scale(1);
+  }
+  41% {
+    transform: translateY(-75px) scale(1);
+    animation-timing-function: cubic-bezier(1, 0, 1, 0);
+  }
+  69% {
+    transform: translateY(0px) scale(1, 1);
+    animation-timing-function: cubic-bezier(1, 0, 1, 0);
+  }
+  70% {
+    transform: translateY(0) scale(1.5, 0.4);
+  }
+  80% {
+    transform: translateY(0) scale(0.8, 1.2);
+  }
+  90% {
+    transform: translateY(0) scale(1.1, 0.8);
   }
   100% {
-    opacity: 0;
+    transform: translateY(0) scale(1, 1);
   }
+}
+.loader__balls__group :nth-child(2) {
+  animation-name: jumpinBallAnimation2;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+@keyframes jumpinBallAnimation2 {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+  10% {
+    transform: translateY(0) scale(1.3, 0.8);
+  }
+  11% {
+    transform: translateY(0) scale(0.7, 1.2);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  39% {
+    transform: translateY(-75px) scale(1);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  40% {
+    transform: translateY(-75px) scale(1);
+  }
+  41% {
+    transform: translateY(-75px) scale(1);
+    animation-timing-function: cubic-bezier(1, 0, 1, 0.5);
+  }
+  69% {
+    transform: translateY(0px) scale(1, 1);
+    animation-timing-function: cubic-bezier(1, 0, 1, 0.5);
+  }
+  70% {
+    transform: translateY(0) scale(1.5, 0.4);
+  }
+  80% {
+    transform: translateY(0) scale(0.8, 1.2);
+  }
+  90% {
+    transform: translateY(0) scale(1.1, 0.8);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+.loader__balls__group :nth-child(3) {
+  animation-name: jumpinBallAnimation3;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+@keyframes jumpinBallAnimation3 {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+  10% {
+    transform: translateY(0) scale(1.3, 0.8);
+  }
+  11% {
+    transform: translateY(0) scale(0.7, 1.2);
+    animation-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  }
+  39% {
+    transform: translateY(-75px) scale(1);
+    animation-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  }
+  40% {
+    transform: translateY(-75px) scale(1);
+  }
+  41% {
+    transform: translateY(-75px) scale(1);
+    animation-timing-function: cubic-bezier(1, 0, 1, 1);
+  }
+  69% {
+    transform: translateY(0px) scale(1, 1);
+    animation-timing-function: cubic-bezier(1, 0, 1, 1);
+  }
+  70% {
+    transform: translateY(0) scale(1.5, 0.4);
+  }
+  80% {
+    transform: translateY(0) scale(0.8, 1.2);
+  }
+  90% {
+    transform: translateY(0) scale(1.1, 0.8);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+.loader__balls__group .item1 {
+  animation-delay: 0ms;
+}
+.loader__balls__group .item2 {
+  animation-delay: 0ms;
+}
+.loader__balls__group .item3 {
+  animation-delay: 0ms;
+}
+.loader__balls__group .item4 {
+  animation-delay: 100ms;
+}
+.loader__balls__group .item5 {
+  animation-delay: 100ms;
+}
+.loader__balls__group .item6 {
+  animation-delay: 100ms;
+}
+.loader__balls__group .item7 {
+  animation-delay: 200ms;
+}
+.loader__balls__group .item8 {
+  animation-delay: 200ms;
+}
+.loader__balls__group .item9 {
+  animation-delay: 200ms;
 }
 .loader .loader__progress {
   width: 80%;
@@ -149,7 +339,6 @@ h3 {
   border-radius: 15px;
   overflow: hidden;
   padding: 2px;
-  animation: exit-animation 1000ms 2000ms forwards ease-in;
 }
 .loader .loader__progress__bar {
   width: 0;
@@ -157,7 +346,7 @@ h3 {
   border-radius: 20px;
   background-color: #FF79DA;
   transform-origin: left;
-  animation: progressBar 1500ms forwards cubic-bezier(0.7, 0, 0.59, 1);
+  animation: progressBar 2000ms forwards cubic-bezier(0.7, 0, 0.59, 1);
 }
 @keyframes progressBar {
   0% {
@@ -181,46 +370,6 @@ h3 {
     width: 100%;
     opacity: 1;
     background-color: #9356DC;
-  }
-}
-.loader .loader__logo {
-  display: inline-block;
-  position: absolute;
-  top: 40%;
-  height: 12vw;
-  max-height: 80px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  opacity: 0;
-  animation: logo-load 1500ms forwards, logo-move 1000ms 2000ms ease-in-out forwards;
-}
-@keyframes logo-move {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-42vh) scale(0.2);
-    opacity: 0;
-  }
-}
-@keyframes logo-load {
-  0% {
-    opacity: 0.1;
-  }
-  20% {
-    opacity: 0.3;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  52% {
-    opacity: 0.8;
-  }
-  70% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
   }
 }
 

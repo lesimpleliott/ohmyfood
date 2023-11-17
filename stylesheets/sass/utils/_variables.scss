@@ -31,13 +31,27 @@ $tablet: 768px;
 $desktop: 1024px;
 $desktopPlus: $desktop + 80px;
 
+
+// ANIMATIONS /////////////////////////////////////////////
 // ANIMATION LOADER
-$on-off: 1; //0:off -1:on
-$loader-timing: 1500ms * $on-off; 
-$loaderFull-displayTime: 500ms * $on-off;
-$loaderHide-delay: $loader-timing + $loaderFull-displayTime; 
-$exit-timing: 1000ms * $on-off; 
-$exitLoader-delay: $loader-timing + $loaderFull-displayTime + $exit-timing;
+$speed: 1; 
+$loader-timing: 2000ms * $speed; 
+$exitLoader-timing: 1000ms * $speed; 
+$exitLoader-delay: $loader-timing + 500ms * $speed; 
+// Animation Loader-Balles
+$ballsLoop: 1000ms;
+$delayBall: 100ms;
+$ball-per-group: 3;
+
+$slowUp1: cubic-bezier(0,0,0.5,1);
+$slowUp2: cubic-bezier(0,0.5,0.5,1);
+$slowUp3: cubic-bezier(0,1,0.5,1);
+$slowUpList: $slowUp1, $slowUp2, $slowUp3;
+
+$slowDown1: cubic-bezier(1,0,1,0);
+$slowDown2: cubic-bezier(1,0,1,0.5);
+$slowDown3: cubic-bezier(1,0,1,1);
+$slowDownList: $slowDown1, $slowDown2, $slowDown3;
 
 // ANIMATION NUMBERS FUCNTIONNING
 $translateX: translateX(-50%);

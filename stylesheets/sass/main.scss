@@ -1,16 +1,16 @@
 @import
-    './utils/_variables', 
-    './utils/_mixins'; 
+    './utils/variables', 
+    './utils/mixins'; 
     
 @import 
-    './base/_reset',
-    './base/_base',   
-    './base/_typography';
+    './base/reset',
+    './base/base',   
+    './base/typography';
 
 @import
-    './layouts/_loader', 
-    './layouts/_header',
-    './layouts/_footer';
+    './layouts/loader', 
+    './layouts/header',
+    './layouts/footer';
 
 @import
     './components/button', 
